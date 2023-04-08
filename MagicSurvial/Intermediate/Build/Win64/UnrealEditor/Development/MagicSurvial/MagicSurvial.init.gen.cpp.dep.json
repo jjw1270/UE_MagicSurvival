@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\magicsurvial.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\magicsurvialeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\development\\magicsurvial\\definitions.magicsurvial.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

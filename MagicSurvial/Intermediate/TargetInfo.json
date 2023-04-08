@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "MagicSurvial",
+			"Path": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "MagicSurvialEditor",
+			"Path": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvialEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

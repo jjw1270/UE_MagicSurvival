@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicSurvial.Build.cs",
+		"F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial.Target.cs",
+		"F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvialEditor.Target.cs"
+	],
+	"EngineVersion": "5.1.1"
+}
