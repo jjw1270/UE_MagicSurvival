@@ -7,9 +7,13 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\MagicSurvialEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicCharacter.gen.cpp.obj"
+"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicCharacterPlayerController.gen.cpp.obj"
 "F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicSurvial.init.gen.cpp.obj"
-"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicSurvialGameModeBase.gen.cpp.obj"
+"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicSurvivalGameMode.gen.cpp.obj"
 "F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicSurvial.cpp.obj"
-"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicSurvialGameModeBase.cpp.obj"
+"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicCharacter.cpp.obj"
+"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicCharacterPlayerController.cpp.obj"
+"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\MagicSurvivalGameMode.cpp.obj"
 "F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\Default.rc2.res"
 /OUT:"F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Development\MagicSurvial\UnrealEditor-MagicSurvial.lib"

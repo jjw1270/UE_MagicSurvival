@@ -1,5 +1,37 @@
 [
 	{
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
+			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_MagicSurvial\\MagicSurvial.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicCharacter.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
+			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_MagicSurvial\\MagicSurvial.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicCharacterPlayerController.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
+			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_MagicSurvial\\MagicSurvial.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicCharacterPlayerController.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
+			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_MagicSurvial\\MagicSurvial.255.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
+	},
+	{
 		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicSurvial.Build.cs",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
@@ -24,7 +56,7 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicSurvialGameModeBase.cpp",
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicSurvivalGameMode.cpp",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
 			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_MagicSurvial\\MagicSurvial.255.rsp"
@@ -32,7 +64,7 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicSurvialGameModeBase.h",
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\MagicSurvivalGameMode.h",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
 			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_MagicSurvial\\MagicSurvial.255.rsp"

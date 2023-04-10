@@ -1,18 +1,16 @@
 F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Inc\MagicSurvial\UHT\MagicSurvialGameModeBase.gen.cpp
 /I .
-/I F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Inc\MagicSurvial\UHT
-/I F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Source
-/I Runtime
-/I Runtime\TraceLog\Public
-/I Runtime\Core\Public
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT
-/I Runtime\CoreUObject\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT
+/I Runtime
 /I ..\Shaders\Shared
 /I Runtime\Engine\Classes
 /I Runtime\Engine\Public
+/I Runtime\TraceLog\Public
+/I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreOnline\UHT
 /I Runtime\CoreOnline\Public
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT
+/I Runtime\CoreUObject\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\NetCore\UHT
 /I Runtime\Net
 /I Runtime\Net\Core\Classes
@@ -271,6 +269,8 @@ F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealE
 /I Runtime\MovieSceneCapture\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController\UHT
 /I Developer\AnimationDataController\Public
+/I F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Intermediate\Build\Win64\UnrealEditor\Inc\MagicSurvial\UHT
+/I F:\UnrealProjects\UE_MagicSurvival\MagicSurvial\Source
 /external:W0
 /external:I ThirdParty\mimalloc\include
 /external:I ThirdParty\LibTiff\Source\Win64
