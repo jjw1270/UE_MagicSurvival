@@ -14,16 +14,4 @@ class MAGICSURVIAL_API AMagicCharacterPlayerController : public APlayerControlle
 {
 	GENERATED_BODY()
 	
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-private:
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<class UUserWidget> LobbyScreenClass;
-
-	UPROPERTY(EditAnywhere, Category = "LobbyCharacter")
-	TSubclassOf<AActor> LobbyCharacterClass;
-	
-	AActor* SpawnedLobbyCharacter;
 };
