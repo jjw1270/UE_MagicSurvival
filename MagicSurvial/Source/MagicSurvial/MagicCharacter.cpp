@@ -31,6 +31,7 @@ AMagicCharacter::AMagicCharacter()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
+
 }
 
 // Called when the game starts or when spawned
@@ -48,9 +49,3 @@ void AMagicCharacter::Tick(float DeltaTime)
 
 }
 
-// Called to bind functionality to input
-void AMagicCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}

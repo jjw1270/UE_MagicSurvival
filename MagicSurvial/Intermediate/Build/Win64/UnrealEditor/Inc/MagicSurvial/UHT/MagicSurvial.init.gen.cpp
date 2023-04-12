@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvial_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xE2859F8D,
+				0x17449E76,
 				0xBD856B3E,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvial_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_MagicSurvial.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_MagicSurvial(Z_Construct_UPackage__Script_MagicSurvial, TEXT("/Script/MagicSurvial"), Z_Registration_Info_UPackage__Script_MagicSurvial, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xE2859F8D, 0xBD856B3E));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_MagicSurvial(Z_Construct_UPackage__Script_MagicSurvial, TEXT("/Script/MagicSurvial"), Z_Registration_Info_UPackage__Script_MagicSurvial, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x17449E76, 0xBD856B3E));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
