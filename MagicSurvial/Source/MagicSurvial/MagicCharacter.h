@@ -16,6 +16,9 @@ public:
 	// Sets default values for this pawn's properties
 	AMagicCharacter();
 
+private:
+	class AMagicSurvivalGameMode* GameMode;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

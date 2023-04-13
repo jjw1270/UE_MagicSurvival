@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvial_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x94B8DFC8,
-				0x2C22DDBE,
+				0xA969BEBA,
+				0x0E785A3B,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_MagicSurvial.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_MagicSurvial.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_MagicSurvial(Z_Construct_UPackage__Script_MagicSurvial, TEXT("/Script/MagicSurvial"), Z_Registration_Info_UPackage__Script_MagicSurvial, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x94B8DFC8, 0x2C22DDBE));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_MagicSurvial(Z_Construct_UPackage__Script_MagicSurvial, TEXT("/Script/MagicSurvial"), Z_Registration_Info_UPackage__Script_MagicSurvial, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xA969BEBA, 0x0E785A3B));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

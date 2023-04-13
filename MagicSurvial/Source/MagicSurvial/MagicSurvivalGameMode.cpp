@@ -38,5 +38,7 @@ void AMagicSurvivalGameMode::StartGame()
         SpawnedLobbyCharacter->Destroy();
         SpawnedLobbyCharacter = nullptr;
     }
+    GetWorld()->GetFirstPlayerController()->bShowMouseCursor = false;
+    bGameStart = true;
     return;
 }

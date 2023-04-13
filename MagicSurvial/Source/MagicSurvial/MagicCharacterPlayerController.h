@@ -6,6 +6,8 @@
 #include "GameFramework/PlayerController.h"
 #include "MagicCharacterPlayerController.generated.h"
 
+class AFloor;
+
 UCLASS()
 class MAGICSURVIAL_API AMagicCharacterPlayerController : public APlayerController
 {
@@ -14,5 +16,12 @@ class MAGICSURVIAL_API AMagicCharacterPlayerController : public APlayerControlle
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	
+private:
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AFloor> FloorClass;
+
+public:
+	AFloor* Floors[3][3];
 	
 };

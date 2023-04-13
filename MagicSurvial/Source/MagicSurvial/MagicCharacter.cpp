@@ -4,6 +4,7 @@
 #include "MagicCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "MagicSurvivalGameMode.h"
 #include "Kismet/GameplayStatics.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
@@ -20,7 +21,7 @@ AMagicCharacter::AMagicCharacter()
 
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
 	SpringArm->SetupAttachment(RootComponent);
-    SpringArm->TargetArmLength = 1500;
+    SpringArm->TargetArmLength = 1800;
     SpringArm->SetRelativeRotation(FRotator(-75.f, 0, 0));
 	// SpringArm->bInheritYaw = false; SpringArm->bInheritPitch = false; SpringArm->bInheritRoll = false;
 
@@ -32,6 +33,8 @@ AMagicCharacter::AMagicCharacter()
 void AMagicCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	GameMode = Cast<AMagicSurvivalGameMode>(GetWorld()->GetAuthGameMode());
 }
 
 // Called every frame
@@ -71,6 +74,10 @@ void AMagicCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInp
 
 void AMagicCharacter::Move(const FInputActionValue& Value)
 {
+	if (!GameMode->bGameStart)
+	{
+		return;
+	}
     // input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
     
