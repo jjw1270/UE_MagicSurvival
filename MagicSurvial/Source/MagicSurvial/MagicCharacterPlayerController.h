@@ -21,8 +21,13 @@ private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AFloor> FloorClass;
 
-public:
 	AFloor* Floors[3][3];
 	
+public:
+	AFloor* GetFloor(int32 dx, int32 dy);
+	
 	void InfiniteMap(AFloor* OverlappedFloor);
+
+private:
+	void RegenerateFloor(const FVector& CenterFloorPos, bool bSpawn);
 };

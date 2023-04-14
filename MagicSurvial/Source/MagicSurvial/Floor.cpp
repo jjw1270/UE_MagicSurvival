@@ -20,17 +20,19 @@ AFloor::AFloor()
 	BoxCollision->SetBoxExtent(FVector(50.f, 50.f, 1.f));
 }
 
-// Called when the game starts or when spawned
-void AFloor::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
+// void AFloor::Copy(const AFloor& Other)
+// {
+// 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+// 	PrimaryActorTick.bCanEverTick = Other.PrimaryActorTick.bCanEverTick;
 
-// Called every frame
-void AFloor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
+// 	FloorMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Floor Mesh"));
+// 	RootComponent = FloorMesh;
 
-}
+// 	FloorMesh->SetStaticMesh(Other.FloorMesh->GetStaticMesh());
+// 	FloorMesh->SetWorldTransform(Other.FloorMesh->GetComponentTransform());
+// 	FloorMesh->SetWorldScale3D(Other.Scale);
 
+// 	BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collision"));
+// 	BoxCollision->SetupAttachment(FloorMesh);
+// 	BoxCollision->SetBoxExtent(FVector(50.f, 50.f, 1.f));
+// }
