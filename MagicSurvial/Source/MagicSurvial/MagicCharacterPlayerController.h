@@ -24,4 +24,5 @@ private:
 public:
 	AFloor* Floors[3][3];
 	
+	void InfiniteMap(AFloor* OverlappedFloor);
 };

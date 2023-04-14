@@ -9,12 +9,18 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "InputMappingContext.h"
+#include "Components/PrimitiveComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Floor.h"
+#include "MagicCharacterPlayerController.h"
 
 // Sets default values
 AMagicCharacter::AMagicCharacter()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	RootCapsuleComp = GetCapsuleComponent();
 
 	WeaponMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Weapon Mesh"));
 	WeaponMesh->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("WeaponSocket"));
@@ -35,6 +41,9 @@ void AMagicCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	GameMode = Cast<AMagicSurvivalGameMode>(GetWorld()->GetAuthGameMode());
+
+	// Overlap Event 선언
+	RootCapsuleComp->OnComponentBeginOverlap.AddDynamic(this, &AMagicCharacter::OnOverlapBegin);
 }
 
 // Called every frame
@@ -101,5 +110,17 @@ void AMagicCharacter::Move(const FInputActionValue& Value)
 		// add movement 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
 		AddMovementInput(RightDirection, MovementVector.X);
+	}
+}
+
+void AMagicCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor && (OtherActor != this) && OtherComp) 
+	{
+		AFloor* OverlappedFloor = Cast<AFloor>(OtherActor);
+		if(OverlappedFloor)
+		{
+			Cast<AMagicCharacterPlayerController>(GetController())->InfiniteMap(OverlappedFloor);
+		}
 	}
 }

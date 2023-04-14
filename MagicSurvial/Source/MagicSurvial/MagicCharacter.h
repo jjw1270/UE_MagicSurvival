@@ -7,6 +7,8 @@
 #include "InputActionValue.h"
 #include "MagicCharacter.generated.h"
 
+class UPrimitiveComponent;
+
 UCLASS()
 class MAGICSURVIAL_API AMagicCharacter : public ACharacter
 {
@@ -24,14 +26,16 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
+	UCapsuleComponent* RootCapsuleComp;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UStaticMeshComponent> WeaponMesh;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* SpringArm;
+	TObjectPtr<class USpringArmComponent> SpringArm;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* Camera;
+	TObjectPtr<class UCameraComponent> Camera;
 
 public:
 	// Called every frame
@@ -49,4 +53,8 @@ protected:
 
 private:
 	void Move(const FInputActionValue& Value);
+
+	UFUNCTION()
+	void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
 };

@@ -9,9 +9,10 @@ void AMagicCharacterPlayerController::BeginPlay()
     Super::BeginPlay();
     
     // Map 생성
-    if (FloorClass != nullptr)
+    if (FloorClass == nullptr)
     {
         UE_LOG(LogTemp, Warning, TEXT("FloorClass"));
+        return;
     }
 
     float dx = 10000.f;
@@ -29,5 +30,21 @@ void AMagicCharacterPlayerController::BeginPlay()
             dy += 10000.f;
         }
         dx -= 10000.f;
+    }
+}
+
+void AMagicCharacterPlayerController::InfiniteMap(AFloor* OverlappedFloor)
+{
+    for (int32 i = 0; i < 3; i++)
+    {
+        for (int32 j = 0; j < 3; j++)
+        {
+            if (Floors[i][j] == OverlappedFloor)
+            {
+                ///////////////////////////////////////////////////
+                UE_LOG(LogTemp, Error, TEXT("배열[%d][%d]"), i, j);
+                break;
+            }
+        }
     }
 }

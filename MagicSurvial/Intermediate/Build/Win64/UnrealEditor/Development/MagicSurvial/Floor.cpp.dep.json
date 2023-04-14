@@ -7,7 +7,11 @@
         "Includes": [
             "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\development\\magicsurvial\\definitions.magicsurvial.h",
             "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\source\\magicsurvial\\floor.h",
-            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\floor.generated.h"
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\floor.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.1\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

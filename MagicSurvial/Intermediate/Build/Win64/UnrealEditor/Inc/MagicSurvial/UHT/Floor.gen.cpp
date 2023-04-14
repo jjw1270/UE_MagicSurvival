@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeFloor() {}
 // Cross Module References
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	MAGICSURVIAL_API UClass* Z_Construct_UClass_AFloor();
 	MAGICSURVIAL_API UClass* Z_Construct_UClass_AFloor_NoRegister();
@@ -31,13 +32,17 @@ void EmptyLinkFunctionForGeneratedCodeFloor() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Scale_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Scale;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_FloorMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_FloorMesh;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Scale_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoxCollision_MetaData[];
 #endif
-		static const UECodeGen_Private::FStructPropertyParams NewProp_Scale;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_BoxCollision;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -53,6 +58,14 @@ void EmptyLinkFunctionForGeneratedCodeFloor() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloor_Statics::NewProp_Scale_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Transform" },
+		{ "ModuleRelativePath", "Floor.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AFloor_Statics::NewProp_Scale = { "Scale", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFloor, Scale), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AFloor_Statics::NewProp_Scale_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloor_Statics::NewProp_Scale_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloor_Statics::NewProp_FloorMesh_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Components" },
@@ -62,16 +75,18 @@ void EmptyLinkFunctionForGeneratedCodeFloor() {}
 #endif
 	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AFloor_Statics::NewProp_FloorMesh = { "FloorMesh", nullptr, (EPropertyFlags)0x00440000000a001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFloor, FloorMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFloor_Statics::NewProp_FloorMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloor_Statics::NewProp_FloorMesh_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloor_Statics::NewProp_Scale_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFloor_Statics::NewProp_BoxCollision_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Transform" },
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Floor.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AFloor_Statics::NewProp_Scale = { "Scale", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFloor, Scale), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AFloor_Statics::NewProp_Scale_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloor_Statics::NewProp_Scale_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AFloor_Statics::NewProp_BoxCollision = { "BoxCollision", nullptr, (EPropertyFlags)0x00440000000a001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AFloor, BoxCollision), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFloor_Statics::NewProp_BoxCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFloor_Statics::NewProp_BoxCollision_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFloor_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloor_Statics::NewProp_FloorMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloor_Statics::NewProp_Scale,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloor_Statics::NewProp_FloorMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFloor_Statics::NewProp_BoxCollision,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AFloor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AFloor>::IsAbstract,
@@ -110,9 +125,9 @@ void EmptyLinkFunctionForGeneratedCodeFloor() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_Floor_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AFloor, AFloor::StaticClass, TEXT("AFloor"), &Z_Registration_Info_UClass_AFloor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFloor), 112057944U) },
+		{ Z_Construct_UClass_AFloor, AFloor::StaticClass, TEXT("AFloor"), &Z_Registration_Info_UClass_AFloor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AFloor), 2570673666U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_Floor_h_3921566352(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_Floor_h_1778527807(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_Floor_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_Floor_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

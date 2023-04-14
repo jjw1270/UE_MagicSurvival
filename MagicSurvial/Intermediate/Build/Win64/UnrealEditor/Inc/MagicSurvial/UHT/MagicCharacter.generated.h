@@ -9,16 +9,27 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef MAGICSURVIAL_MagicCharacter_generated_h
 #error "MagicCharacter.generated.h already included, missing '#pragma once' in MagicCharacter.h"
 #endif
 #define MAGICSURVIAL_MagicCharacter_generated_h
 
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_SPARSE_DATA
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_RPC_WRAPPERS
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_ACCESSORS
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_SPARSE_DATA
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnOverlapBegin);
+
+
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnOverlapBegin);
+
+
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_ACCESSORS
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMagicCharacter(); \
 	friend struct Z_Construct_UClass_AMagicCharacter_Statics; \
@@ -27,7 +38,7 @@ public: \
 	DECLARE_SERIALIZER(AMagicCharacter)
 
 
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_INCLASS \
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesAMagicCharacter(); \
 	friend struct Z_Construct_UClass_AMagicCharacter_Statics; \
@@ -36,7 +47,7 @@ public: \
 	DECLARE_SERIALIZER(AMagicCharacter)
 
 
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_STANDARD_CONSTRUCTORS \
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMagicCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMagicCharacter) \
@@ -50,7 +61,7 @@ public: \
 	NO_API virtual ~AMagicCharacter();
 
 
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMagicCharacter(AMagicCharacter&&); \
@@ -62,27 +73,27 @@ public: \
 	NO_API virtual ~AMagicCharacter();
 
 
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_10_PROLOG
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_GENERATED_BODY_LEGACY \
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_12_PROLOG
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_SPARSE_DATA \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_RPC_WRAPPERS \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_ACCESSORS \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_INCLASS \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_STANDARD_CONSTRUCTORS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_SPARSE_DATA \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_RPC_WRAPPERS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_ACCESSORS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_INCLASS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_GENERATED_BODY \
+#define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_SPARSE_DATA \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_ACCESSORS \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_INCLASS_NO_PURE_DECLS \
-	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_13_ENHANCED_CONSTRUCTORS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_SPARSE_DATA \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_ACCESSORS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_INCLASS_NO_PURE_DECLS \
+	FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

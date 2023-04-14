@@ -2,6 +2,7 @@
 
 
 #include "Floor.h"
+#include "Components/BoxComponent.h"
 
 // Sets default values
 AFloor::AFloor()
@@ -13,6 +14,10 @@ AFloor::AFloor()
 	RootComponent = FloorMesh;
 
 	FloorMesh->SetWorldScale3D(Scale);
+
+	BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collision"));
+	BoxCollision->SetupAttachment(FloorMesh);
+	BoxCollision->SetBoxExtent(FVector(50.f, 50.f, 1.f));
 }
 
 // Called when the game starts or when spawned
