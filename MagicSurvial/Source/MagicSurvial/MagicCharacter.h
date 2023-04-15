@@ -37,6 +37,9 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UCameraComponent> Camera;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Skill SpawnPoint", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<USceneComponent> Skill_SpawnPoint_A[8];
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

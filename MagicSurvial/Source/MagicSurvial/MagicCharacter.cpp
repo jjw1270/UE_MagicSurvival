@@ -33,6 +33,26 @@ AMagicCharacter::AMagicCharacter()
 
     Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
+
+	float Dir_x = 40;
+	float Dir_y = 0;
+	float Rotate_z = 0;
+
+	for (int32 i = 0; i < 8; i++)
+	{
+		Skill_SpawnPoint_A[i]->CreateDefaultSubobject<USceneComponent>(TEXT("Skill SpawnPoint %d"), i);
+		
+		float dx = (i % 2 == 0) ? -10.f : 10.f;
+        float dy = (i < 2 || i > 5) ? 30.f : -10.f;
+        float rz = (i % 2 == 0) ? 0.f : 40.f;
+
+		Dir_x += dx;
+        Dir_y += dy;
+        Rotate_z+= rz;
+
+		Skill_SpawnPoint_A[i]->SetRelativeLocation(FVector(Dir_x, Dir_y, 0.f));
+		Skill_SpawnPoint_A[i]->SetRelativeRotation(FRotator(0.f, 0.f, Rotate_z));
+	}
 }
 
 // Called when the game starts or when spawned
