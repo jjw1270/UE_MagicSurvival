@@ -12,6 +12,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AActor;
 class UPrimitiveComponent;
 struct FHitResult;
+struct FInputActionValue;
 #ifdef MAGICSURVIAL_MagicCharacter_generated_h
 #error "MagicCharacter.generated.h already included, missing '#pragma once' in MagicCharacter.h"
 #endif
@@ -20,12 +21,24 @@ struct FHitResult;
 #define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_SPARSE_DATA
 #define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execOnOverlapBegin);
+	DECLARE_FUNCTION(execSkill_PunchHeavy); \
+	DECLARE_FUNCTION(execSkill_MagicArrow); \
+	DECLARE_FUNCTION(execSkill_LightningStrike); \
+	DECLARE_FUNCTION(execSkill_SparkleBall); \
+	DECLARE_FUNCTION(execSkill_IceSpear); \
+	DECLARE_FUNCTION(execOnOverlapBegin); \
+	DECLARE_FUNCTION(execMove);
 
 
 #define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execOnOverlapBegin);
+	DECLARE_FUNCTION(execSkill_PunchHeavy); \
+	DECLARE_FUNCTION(execSkill_MagicArrow); \
+	DECLARE_FUNCTION(execSkill_LightningStrike); \
+	DECLARE_FUNCTION(execSkill_SparkleBall); \
+	DECLARE_FUNCTION(execSkill_IceSpear); \
+	DECLARE_FUNCTION(execOnOverlapBegin); \
+	DECLARE_FUNCTION(execMove);
 
 
 #define FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_15_ACCESSORS

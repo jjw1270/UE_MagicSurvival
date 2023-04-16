@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\icespear.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\magicsurvialeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\development\\magicsurvial\\definitions.magicsurvial.h",
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\source\\magicsurvial\\icespear.h",
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\source\\magicsurvial\\skillbase.h",
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\skillbase.generated.h",
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\icespear.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

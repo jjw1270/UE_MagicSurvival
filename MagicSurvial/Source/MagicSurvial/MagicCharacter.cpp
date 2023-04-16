@@ -14,6 +14,8 @@
 #include "Floor.h"
 #include "MagicCharacterPlayerController.h"
 
+#include "IceSpear.h"
+
 // Sets default values
 AMagicCharacter::AMagicCharacter()
 {
@@ -28,30 +30,25 @@ AMagicCharacter::AMagicCharacter()
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("Spring Arm"));
 	SpringArm->SetupAttachment(RootComponent);
     SpringArm->TargetArmLength = 1800;
-    SpringArm->SetRelativeRotation(FRotator(-75.f, 0, 0));
-	// SpringArm->bInheritYaw = false; SpringArm->bInheritPitch = false; SpringArm->bInheritRoll = false;
+    SpringArm->SetRelativeRotation(FRotator(-75.f, 0.f, 0.f));
+	SpringArm->bUsePawnControlRotation = true;
+	SpringArm->bInheritYaw = false; SpringArm->bInheritPitch = false; SpringArm->bInheritRoll = false;
 
     Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
 
-	float Dir_x = 40;
-	float Dir_y = 0;
-	float Rotate_z = 0;
+	// Skill Spawn Point
+	Skill_SpawnPoint_A_Base = CreateDefaultSubobject<USceneComponent>(TEXT("Skill SpawnPoint Base"));
+	Skill_SpawnPoint_A_Base->SetupAttachment(RootComponent);
 
+	Skill_SpawnPoint_A.SetNum(8);
+	float Rotate_Yaw = 0.f;
 	for (int32 i = 0; i < 8; i++)
 	{
-		Skill_SpawnPoint_A[i]->CreateDefaultSubobject<USceneComponent>(TEXT("Skill SpawnPoint %d"), i);
-		
-		float dx = (i % 2 == 0) ? -10.f : 10.f;
-        float dy = (i < 2 || i > 5) ? 30.f : -10.f;
-        float rz = (i % 2 == 0) ? 0.f : 40.f;
-
-		Dir_x += dx;
-        Dir_y += dy;
-        Rotate_z+= rz;
-
-		Skill_SpawnPoint_A[i]->SetRelativeLocation(FVector(Dir_x, Dir_y, 0.f));
-		Skill_SpawnPoint_A[i]->SetRelativeRotation(FRotator(0.f, 0.f, Rotate_z));
+		Skill_SpawnPoint_A[i] = CreateDefaultSubobject<USceneComponent>(FName(FString::Printf(TEXT("Skill SpawnPoint %d"), i)));
+		Skill_SpawnPoint_A[i]->SetupAttachment(RootComponent);
+		Skill_SpawnPoint_A[i]->SetRelativeRotation(FRotator(0.f, Rotate_Yaw, 0.f));
+		Rotate_Yaw += 45.f;
 	}
 }
 
@@ -64,6 +61,20 @@ void AMagicCharacter::BeginPlay()
 
 	// Overlap Event 선언
 	RootCapsuleComp->OnComponentBeginOverlap.AddDynamic(this, &AMagicCharacter::OnOverlapBegin);
+
+	// Skill 타이머 델리게이트 생성
+	TimerDelegate_Skill_IceSpear = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_IceSpear);
+	TimerDelegate_Skill_SparkleBall = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_SparkleBall);
+	TimerDelegate_Skill_LightningStrike = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_LightningStrike);
+	TimerDelegate_Skill_MagicArrow = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_MagicArrow);
+	TimerDelegate_Skill_PunchHeavy = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_PunchHeavy);
+
+	// 스킬 타이머 시작
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_IceSpear, TimerDelegate_Skill_IceSpear, Timer_Skill_IceSpear, true);
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_SparkleBall, TimerDelegate_Skill_SparkleBall, Timer_Skill_SparkleBall, true);
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_LightningStrike, TimerDelegate_Skill_LightningStrike, Timer_Skill_LightningStrike, true);
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_MagicArrow, TimerDelegate_Skill_MagicArrow, Timer_Skill_MagicArrow, true);
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_PunchHeavy, TimerDelegate_Skill_PunchHeavy, Timer_Skill_PunchHeavy, true);
 }
 
 // Called every frame
@@ -142,5 +153,154 @@ void AMagicCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor
 		{
 			Cast<AMagicCharacterPlayerController>(GetController())->InfiniteMap(OverlappedFloor);
 		}
+	}
+}
+
+int AMagicCharacter::GetPlayerLevel()
+{
+	return PlayerLevel;
+}
+
+int AMagicCharacter::GetSkill_Level_IceSpear()
+{
+	return Skill_Level_IceSpear;
+}
+
+int AMagicCharacter::GetSkill_Level_SparkleBall()
+{
+	return Skill_Level_SparkleBall;
+}
+
+int AMagicCharacter::GetSkill_Level_LightningStrike()
+{
+	return Skill_Level_LightningStrike;
+}
+
+int AMagicCharacter::GetSkill_Level_MagicArrow()
+{
+	return Skill_Level_MagicArrow;
+}
+
+int AMagicCharacter::GetSkill_Level_PunchHeavy()
+{
+	return Skill_Level_PunchHeavy;
+}
+
+void AMagicCharacter::Skill_IceSpear()
+{
+	if (Skill_Level_IceSpear == 0) return;
+
+	switch (Skill_Level_IceSpear)
+	{
+	case 5:
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[3]->GetComponentLocation(), Skill_SpawnPoint_A[3]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[5]->GetComponentLocation(), Skill_SpawnPoint_A[5]->GetComponentRotation());
+	case 4:
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[1]->GetComponentLocation(), Skill_SpawnPoint_A[1]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[7]->GetComponentLocation(), Skill_SpawnPoint_A[7]->GetComponentRotation());
+	case 3:
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[2]->GetComponentLocation(), Skill_SpawnPoint_A[2]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[6]->GetComponentLocation(), Skill_SpawnPoint_A[6]->GetComponentRotation());
+	case 2:
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[4]->GetComponentLocation(), Skill_SpawnPoint_A[4]->GetComponentRotation());	
+	case 1:
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[0]->GetComponentLocation(), Skill_SpawnPoint_A[0]->GetComponentRotation());
+		break;
+	}
+}
+
+void AMagicCharacter::Skill_SparkleBall()
+{
+	if (Skill_Level_SparkleBall == 0) return;
+
+	switch (Skill_Level_SparkleBall)
+	{
+	case 1:
+		
+		break;
+	case 2:
+
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+	case 5:
+	
+		break;
+	}
+}
+
+void AMagicCharacter::Skill_LightningStrike()
+{
+	if (Skill_Level_LightningStrike == 0) return;
+
+	switch (Skill_Level_LightningStrike)
+	{
+	case 1:
+		
+		break;
+	case 2:
+
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+	case 5:
+	
+		break;
+	}
+}
+
+void AMagicCharacter::Skill_MagicArrow()
+{
+	if (Skill_Level_MagicArrow == 0) return;
+
+	switch (Skill_Level_MagicArrow)
+	{
+	case 1:
+		
+		break;
+	case 2:
+
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+	case 5:
+	
+		break;
+	}
+}
+
+void AMagicCharacter::Skill_PunchHeavy()
+{
+	if (Skill_Level_PunchHeavy == 0) return;
+
+	switch (Skill_Level_PunchHeavy)
+	{
+	case 1:
+		
+		break;
+	case 2:
+
+		break;
+	case 3:
+
+		break;
+	case 4:
+
+		break;
+	case 5:
+	
+		break;
 	}
 }

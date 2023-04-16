@@ -7,22 +7,62 @@
 #include "UObject/GeneratedCppIncludes.h"
 #include "MagicSurvial/MagicCharacter.h"
 #include "Engine/Classes/Engine/HitResult.h"
+#include "EnhancedInput/Public/InputActionValue.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
+	ENHANCEDINPUT_API UScriptStruct* Z_Construct_UScriptStruct_FInputActionValue();
+	MAGICSURVIAL_API UClass* Z_Construct_UClass_AIceSpear_NoRegister();
 	MAGICSURVIAL_API UClass* Z_Construct_UClass_AMagicCharacter();
 	MAGICSURVIAL_API UClass* Z_Construct_UClass_AMagicCharacter_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_MagicSurvial();
 // End Cross Module References
+	DEFINE_FUNCTION(AMagicCharacter::execSkill_PunchHeavy)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Skill_PunchHeavy();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AMagicCharacter::execSkill_MagicArrow)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Skill_MagicArrow();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AMagicCharacter::execSkill_LightningStrike)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Skill_LightningStrike();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AMagicCharacter::execSkill_SparkleBall)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Skill_SparkleBall();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AMagicCharacter::execSkill_IceSpear)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Skill_IceSpear();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMagicCharacter::execOnOverlapBegin)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp);
@@ -36,13 +76,67 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 		P_THIS->OnOverlapBegin(Z_Param_OverlappedComp,Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AMagicCharacter::execMove)
+	{
+		P_GET_STRUCT_REF(FInputActionValue,Z_Param_Out_Value);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Move(Z_Param_Out_Value);
+		P_NATIVE_END;
+	}
 	void AMagicCharacter::StaticRegisterNativesAMagicCharacter()
 	{
 		UClass* Class = AMagicCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Move", &AMagicCharacter::execMove },
 			{ "OnOverlapBegin", &AMagicCharacter::execOnOverlapBegin },
+			{ "Skill_IceSpear", &AMagicCharacter::execSkill_IceSpear },
+			{ "Skill_LightningStrike", &AMagicCharacter::execSkill_LightningStrike },
+			{ "Skill_MagicArrow", &AMagicCharacter::execSkill_MagicArrow },
+			{ "Skill_PunchHeavy", &AMagicCharacter::execSkill_PunchHeavy },
+			{ "Skill_SparkleBall", &AMagicCharacter::execSkill_SparkleBall },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AMagicCharacter_Move_Statics
+	{
+		struct MagicCharacter_eventMove_Parms
+		{
+			FInputActionValue Value;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Value_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Value;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicCharacter_Move_Statics::NewProp_Value_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AMagicCharacter_Move_Statics::NewProp_Value = { "Value", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MagicCharacter_eventMove_Parms, Value), Z_Construct_UScriptStruct_FInputActionValue, METADATA_PARAMS(Z_Construct_UFunction_AMagicCharacter_Move_Statics::NewProp_Value_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Move_Statics::NewProp_Value_MetaData)) }; // 2388133963
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMagicCharacter_Move_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMagicCharacter_Move_Statics::NewProp_Value,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicCharacter_Move_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicCharacter_Move_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicCharacter, nullptr, "Move", nullptr, nullptr, sizeof(Z_Construct_UFunction_AMagicCharacter_Move_Statics::MagicCharacter_eventMove_Parms), Z_Construct_UFunction_AMagicCharacter_Move_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Move_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00440401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicCharacter_Move_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Move_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicCharacter_Move()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicCharacter_Move_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AMagicCharacter_OnOverlapBegin_Statics
 	{
@@ -125,6 +219,116 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicCharacter, nullptr, "Skill_IceSpear", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicCharacter, nullptr, "Skill_LightningStrike", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicCharacter, nullptr, "Skill_MagicArrow", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicCharacter, nullptr, "Skill_PunchHeavy", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicCharacter, nullptr, "Skill_SparkleBall", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AMagicCharacter);
 	UClass* Z_Construct_UClass_AMagicCharacter_NoRegister()
 	{
@@ -150,6 +354,15 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Camera;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_SpawnPoint_A_Base_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Skill_SpawnPoint_A_Base;
+		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Skill_SpawnPoint_A_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_SpawnPoint_A_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_Skill_SpawnPoint_A;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_InputMapping_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_InputMapping;
@@ -157,6 +370,30 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MoveAction_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MoveAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_IceSpearClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_Skill_IceSpearClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_Level_IceSpear_MetaData[];
+#endif
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Skill_Level_IceSpear;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_Level_SparkleBall_MetaData[];
+#endif
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Skill_Level_SparkleBall;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_Level_LightningStrike_MetaData[];
+#endif
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Skill_Level_LightningStrike;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_Level_MagicArrow_MetaData[];
+#endif
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Skill_Level_MagicArrow;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Skill_Level_PunchHeavy_MetaData[];
+#endif
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Skill_Level_PunchHeavy;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -166,7 +403,13 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_MagicSurvial,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMagicCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMagicCharacter_Move, "Move" }, // 1763999074
 		{ &Z_Construct_UFunction_AMagicCharacter_OnOverlapBegin, "OnOverlapBegin" }, // 966705465
+		{ &Z_Construct_UFunction_AMagicCharacter_Skill_IceSpear, "Skill_IceSpear" }, // 3832581313
+		{ &Z_Construct_UFunction_AMagicCharacter_Skill_LightningStrike, "Skill_LightningStrike" }, // 1152583036
+		{ &Z_Construct_UFunction_AMagicCharacter_Skill_MagicArrow, "Skill_MagicArrow" }, // 999211781
+		{ &Z_Construct_UFunction_AMagicCharacter_Skill_PunchHeavy, "Skill_PunchHeavy" }, // 3977559871
+		{ &Z_Construct_UFunction_AMagicCharacter_Skill_SparkleBall, "Skill_SparkleBall" }, // 2085054559
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::Class_MetaDataParams[] = {
@@ -203,6 +446,25 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 #endif
 	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00440000000a001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Camera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Camera_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_Base_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_Base = { "Skill_SpawnPoint_A_Base", nullptr, (EPropertyFlags)0x00440000000a001d, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_SpawnPoint_A_Base), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_Base_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_Base_MetaData)) };
+	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_Inner = { "Skill_SpawnPoint_A", nullptr, (EPropertyFlags)0x00040000000a0008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A = { "Skill_SpawnPoint_A", nullptr, (EPropertyFlags)0x004400800002001d, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_SpawnPoint_A), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_InputMapping_MetaData[] = {
 		{ "Category", "Enhanced Input" },
 		{ "ModuleRelativePath", "MagicCharacter.h" },
@@ -216,12 +478,63 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_MoveAction = { "MoveAction", nullptr, (EPropertyFlags)0x0020080000010015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, MoveAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_MoveAction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_MoveAction_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_IceSpearClass_MetaData[] = {
+		{ "Category", "Skills" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_IceSpearClass = { "Skill_IceSpearClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_IceSpearClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AIceSpear_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_IceSpearClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_IceSpearClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_IceSpear_MetaData[] = {
+		{ "Category", "Skills" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_IceSpear = { "Skill_Level_IceSpear", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_Level_IceSpear), METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_IceSpear_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_IceSpear_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_SparkleBall_MetaData[] = {
+		{ "Category", "Skills" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_SparkleBall = { "Skill_Level_SparkleBall", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_Level_SparkleBall), METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_SparkleBall_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_SparkleBall_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_LightningStrike_MetaData[] = {
+		{ "Category", "Skills" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_LightningStrike = { "Skill_Level_LightningStrike", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_Level_LightningStrike), METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_LightningStrike_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_LightningStrike_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_MagicArrow_MetaData[] = {
+		{ "Category", "Skills" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_MagicArrow = { "Skill_Level_MagicArrow", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_Level_MagicArrow), METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_MagicArrow_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_MagicArrow_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_PunchHeavy_MetaData[] = {
+		{ "Category", "Skills" },
+		{ "ModuleRelativePath", "MagicCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_PunchHeavy = { "Skill_Level_PunchHeavy", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AMagicCharacter, Skill_Level_PunchHeavy), METADATA_PARAMS(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_PunchHeavy_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_PunchHeavy_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMagicCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_WeaponMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_SpringArm,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Camera,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_Base,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_SpawnPoint_A,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_InputMapping,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_MoveAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_IceSpearClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_IceSpear,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_SparkleBall,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_LightningStrike,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_MagicArrow,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMagicCharacter_Statics::NewProp_Skill_Level_PunchHeavy,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMagicCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMagicCharacter>::IsAbstract,
@@ -260,9 +573,9 @@ void EmptyLinkFunctionForGeneratedCodeMagicCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMagicCharacter, AMagicCharacter::StaticClass, TEXT("AMagicCharacter"), &Z_Registration_Info_UClass_AMagicCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicCharacter), 4025539273U) },
+		{ Z_Construct_UClass_AMagicCharacter, AMagicCharacter::StaticClass, TEXT("AMagicCharacter"), &Z_Registration_Info_UClass_AMagicCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicCharacter), 1868916425U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_3101685610(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_505139958(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
