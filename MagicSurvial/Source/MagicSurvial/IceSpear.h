@@ -51,4 +51,3 @@ private:
 
 	FTimerHandle TimerHandle_DestroyActor;
 };
-

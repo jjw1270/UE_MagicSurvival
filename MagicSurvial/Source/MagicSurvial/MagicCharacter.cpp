@@ -15,6 +15,7 @@
 #include "MagicCharacterPlayerController.h"
 
 #include "IceSpear.h"
+#include "SparkleBall.h"
 
 // Sets default values
 AMagicCharacter::AMagicCharacter()
@@ -38,16 +39,25 @@ AMagicCharacter::AMagicCharacter()
 	Camera->SetupAttachment(SpringArm);
 
 	// Skill Spawn Point
-	Skill_SpawnPoint_A_Base = CreateDefaultSubobject<USceneComponent>(TEXT("Skill SpawnPoint Base"));
-	Skill_SpawnPoint_A_Base->SetupAttachment(RootComponent);
+	Base_Skill_Point_A = CreateDefaultSubobject<USceneComponent>(TEXT("Base Skill Point A"));
+	Base_Skill_Point_A->SetupAttachment(RootComponent);
+	Skill_Point_A.SetNum(8);
 
-	Skill_SpawnPoint_A.SetNum(8);
+	Base_Skill_Point_B = CreateDefaultSubobject<USceneComponent>(TEXT("Base Skill Point B"));
+	Base_Skill_Point_B->AttachToComponent(RootComponent, FAttachmentTransformRules(EAttachmentRule::KeepRelative, EAttachmentRule::KeepWorld, EAttachmentRule::KeepRelative, true));
+	Skill_Point_B.SetNum(8);
+
 	float Rotate_Yaw = 0.f;
 	for (int32 i = 0; i < 8; i++)
 	{
-		Skill_SpawnPoint_A[i] = CreateDefaultSubobject<USceneComponent>(FName(FString::Printf(TEXT("Skill SpawnPoint %d"), i)));
-		Skill_SpawnPoint_A[i]->SetupAttachment(RootComponent);
-		Skill_SpawnPoint_A[i]->SetRelativeRotation(FRotator(0.f, Rotate_Yaw, 0.f));
+		Skill_Point_A[i] = CreateDefaultSubobject<USceneComponent>(FName(FString::Printf(TEXT("Skill Point A %d"), i)));
+		Skill_Point_A[i]->SetupAttachment(Base_Skill_Point_A);
+		Skill_Point_A[i]->SetRelativeRotation(FRotator(0.f, Rotate_Yaw, 0.f));
+
+		Skill_Point_B[i] = CreateDefaultSubobject<USceneComponent>(FName(FString::Printf(TEXT("Skill Point B %d"), i)));
+		Skill_Point_B[i]->SetupAttachment(Base_Skill_Point_B);
+		Skill_Point_B[i]->SetRelativeRotation(FRotator(0.f, Rotate_Yaw, 0.f));
+
 		Rotate_Yaw += 45.f;
 	}
 }
@@ -68,13 +78,6 @@ void AMagicCharacter::BeginPlay()
 	TimerDelegate_Skill_LightningStrike = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_LightningStrike);
 	TimerDelegate_Skill_MagicArrow = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_MagicArrow);
 	TimerDelegate_Skill_PunchHeavy = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_PunchHeavy);
-
-	// 스킬 타이머 시작
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_IceSpear, TimerDelegate_Skill_IceSpear, Timer_Skill_IceSpear, true);
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_SparkleBall, TimerDelegate_Skill_SparkleBall, Timer_Skill_SparkleBall, true);
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_LightningStrike, TimerDelegate_Skill_LightningStrike, Timer_Skill_LightningStrike, true);
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_MagicArrow, TimerDelegate_Skill_MagicArrow, Timer_Skill_MagicArrow, true);
-	GetWorld()->GetTimerManager().SetTimer(TimerHandle_Skill_PunchHeavy, TimerDelegate_Skill_PunchHeavy, Timer_Skill_PunchHeavy, true);
 }
 
 // Called every frame
@@ -156,88 +159,65 @@ void AMagicCharacter::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor
 	}
 }
 
-int AMagicCharacter::GetPlayerLevel()
-{
-	return PlayerLevel;
-}
-
-int AMagicCharacter::GetSkill_Level_IceSpear()
-{
-	return Skill_Level_IceSpear;
-}
-
-int AMagicCharacter::GetSkill_Level_SparkleBall()
-{
-	return Skill_Level_SparkleBall;
-}
-
-int AMagicCharacter::GetSkill_Level_LightningStrike()
-{
-	return Skill_Level_LightningStrike;
-}
-
-int AMagicCharacter::GetSkill_Level_MagicArrow()
-{
-	return Skill_Level_MagicArrow;
-}
-
-int AMagicCharacter::GetSkill_Level_PunchHeavy()
-{
-	return Skill_Level_PunchHeavy;
-}
-
 void AMagicCharacter::Skill_IceSpear()
 {
-	if (Skill_Level_IceSpear == 0) return;
+	if (GetSkill_Level_IceSpear() == 0) return;
 
-	switch (Skill_Level_IceSpear)
+	switch (GetSkill_Level_IceSpear())
 	{
 	case 5:
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[3]->GetComponentLocation(), Skill_SpawnPoint_A[3]->GetComponentRotation());
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[5]->GetComponentLocation(), Skill_SpawnPoint_A[5]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[3]->GetComponentLocation(), Skill_Point_A[3]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[5]->GetComponentLocation(), Skill_Point_A[5]->GetComponentRotation());
 	case 4:
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[1]->GetComponentLocation(), Skill_SpawnPoint_A[1]->GetComponentRotation());
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[7]->GetComponentLocation(), Skill_SpawnPoint_A[7]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[1]->GetComponentLocation(), Skill_Point_A[1]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[7]->GetComponentLocation(), Skill_Point_A[7]->GetComponentRotation());
 	case 3:
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[2]->GetComponentLocation(), Skill_SpawnPoint_A[2]->GetComponentRotation());
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[6]->GetComponentLocation(), Skill_SpawnPoint_A[6]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[2]->GetComponentLocation(), Skill_Point_A[2]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[6]->GetComponentLocation(), Skill_Point_A[6]->GetComponentRotation());
 	case 2:
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[4]->GetComponentLocation(), Skill_SpawnPoint_A[4]->GetComponentRotation());	
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[4]->GetComponentLocation(), Skill_Point_A[4]->GetComponentRotation());	
 	case 1:
-		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_SpawnPoint_A[0]->GetComponentLocation(), Skill_SpawnPoint_A[0]->GetComponentRotation());
+		GetWorld()->SpawnActor<AIceSpear>(Skill_IceSpearClass, Skill_Point_A[0]->GetComponentLocation(), Skill_Point_A[0]->GetComponentRotation());
 		break;
 	}
 }
 
 void AMagicCharacter::Skill_SparkleBall()
 {
-	if (Skill_Level_SparkleBall == 0) return;
+	if (GetSkill_Level_SparkleBall() == 0) return;
 
-	switch (Skill_Level_SparkleBall)
+	switch (GetSkill_Level_SparkleBall())
 	{
-	case 1:
-		
-		break;
-	case 2:
-
-		break;
-	case 3:
-
-		break;
-	case 4:
-
-		break;
 	case 5:
-	
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[3]->GetComponentLocation(), Skill_Point_B[3]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[3], FAttachmentTransformRules::KeepWorldTransform);
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[5]->GetComponentLocation(), Skill_Point_B[5]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[5], FAttachmentTransformRules::KeepWorldTransform);
+	case 4:
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[1]->GetComponentLocation(), Skill_Point_B[1]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[1], FAttachmentTransformRules::KeepWorldTransform);
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[7]->GetComponentLocation(), Skill_Point_B[7]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[7], FAttachmentTransformRules::KeepWorldTransform);
+	case 3:
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[2]->GetComponentLocation(), Skill_Point_B[2]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[2], FAttachmentTransformRules::KeepWorldTransform);
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[6]->GetComponentLocation(), Skill_Point_B[6]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[6], FAttachmentTransformRules::KeepWorldTransform);
+	case 2:
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[4]->GetComponentLocation(), Skill_Point_B[4]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[4], FAttachmentTransformRules::KeepWorldTransform);
+	case 1:
+		GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[0]->GetComponentLocation(), Skill_Point_B[0]->GetComponentRotation())
+			->AttachToComponent(Skill_Point_B[0], FAttachmentTransformRules::KeepWorldTransform);
 		break;
 	}
 }
 
 void AMagicCharacter::Skill_LightningStrike()
 {
-	if (Skill_Level_LightningStrike == 0) return;
+	if (GetSkill_Level_LightningStrike() == 0) return;
 
-	switch (Skill_Level_LightningStrike)
+	switch (GetSkill_Level_LightningStrike())
 	{
 	case 1:
 		
@@ -259,9 +239,9 @@ void AMagicCharacter::Skill_LightningStrike()
 
 void AMagicCharacter::Skill_MagicArrow()
 {
-	if (Skill_Level_MagicArrow == 0) return;
+	if (GetSkill_Level_MagicArrow() == 0) return;
 
-	switch (Skill_Level_MagicArrow)
+	switch (GetSkill_Level_MagicArrow())
 	{
 	case 1:
 		
@@ -283,9 +263,9 @@ void AMagicCharacter::Skill_MagicArrow()
 
 void AMagicCharacter::Skill_PunchHeavy()
 {
-	if (Skill_Level_PunchHeavy == 0) return;
+	if (GetSkill_Level_PunchHeavy() == 0) return;
 
-	switch (Skill_Level_PunchHeavy)
+	switch (GetSkill_Level_PunchHeavy())
 	{
 	case 1:
 		

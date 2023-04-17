@@ -38,10 +38,16 @@ private:
 	TObjectPtr<class UCameraComponent> Camera;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<USceneComponent> Skill_SpawnPoint_A_Base;
+	TObjectPtr<USceneComponent> Base_Skill_Point_A;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	TArray<TObjectPtr<USceneComponent>> Skill_SpawnPoint_A;
+	TArray<TObjectPtr<USceneComponent>> Skill_Point_A;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<USceneComponent> Base_Skill_Point_B;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	TArray<TObjectPtr<USceneComponent>> Skill_Point_B;
 
 public:
 	// Called every frame
@@ -71,6 +77,9 @@ private:
 	TSubclassOf<class AIceSpear> Skill_IceSpearClass;
 
 	UPROPERTY(EditAnywhere, Category = "Skills")
+	TSubclassOf<class ASparkleBall> Skill_SparkleBallClass;
+
+	UPROPERTY(EditAnywhere, Category = "Skills")
 	int Skill_Level_IceSpear = 0;
 	UPROPERTY(EditAnywhere, Category = "Skills")
 	int Skill_Level_SparkleBall  = 0;
@@ -82,20 +91,13 @@ private:
 	int Skill_Level_PunchHeavy = 0;
 
 public:
-	int GetPlayerLevel();
+	int GetPlayerLevel() { return PlayerLevel; };
 
-	int GetSkill_Level_IceSpear();
-	int GetSkill_Level_SparkleBall();
-	int GetSkill_Level_LightningStrike();
-	int GetSkill_Level_MagicArrow();
-	int GetSkill_Level_PunchHeavy();
-
-private:
-	FTimerHandle TimerHandle_Skill_IceSpear;
-	FTimerHandle TimerHandle_Skill_SparkleBall;
-	FTimerHandle TimerHandle_Skill_LightningStrike;
-	FTimerHandle TimerHandle_Skill_MagicArrow;
-	FTimerHandle TimerHandle_Skill_PunchHeavy;
+	int GetSkill_Level_IceSpear() { return Skill_Level_IceSpear; };
+	int GetSkill_Level_SparkleBall() { return Skill_Level_SparkleBall; };
+	int GetSkill_Level_LightningStrike() { return Skill_Level_LightningStrike; };
+	int GetSkill_Level_MagicArrow() { return Skill_Level_MagicArrow; };
+	int GetSkill_Level_PunchHeavy() { return Skill_Level_PunchHeavy; };
 
 	FTimerDelegate TimerDelegate_Skill_IceSpear;
 	FTimerDelegate TimerDelegate_Skill_SparkleBall;
@@ -103,6 +105,7 @@ private:
 	FTimerDelegate TimerDelegate_Skill_MagicArrow;
 	FTimerDelegate TimerDelegate_Skill_PunchHeavy;
 
+private:
 	// 스킬 간격
 	float Timer_Skill_IceSpear = 1.5f;
 	float Timer_Skill_SparkleBall = 5.f;
@@ -110,6 +113,14 @@ private:
 	float Timer_Skill_MagicArrow = 2.f;
 	float Timer_Skill_PunchHeavy = 8.f;
 
+public:
+	float Get_Timer_Skill_IceSpear() { return Timer_Skill_IceSpear; };
+	float Get_Timer_Skill_SparkleBall() { return Timer_Skill_SparkleBall; };
+	float Get_Timer_Skill_LightningStrike() { return Timer_Skill_LightningStrike; };
+	float Get_Timer_Skill_MagicArrow() { return Timer_Skill_MagicArrow; };
+	float Get_Timer_Skill_PunchHeavy() { return Timer_Skill_PunchHeavy; };
+
+private:
 	UFUNCTION()
 	void Skill_IceSpear();
 	UFUNCTION()

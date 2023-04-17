@@ -35,6 +35,7 @@ void AMagicCharacterPlayerController::InfiniteMap(AFloor* OverlappedFloor)
         }
     }
 
+    if (OverlappedFloor == Floors[1][1]) return;
     if (OverlappedFloor == Floors[0][0])
     {
         Floors[0][0] = TempFloors[2][0];
@@ -82,18 +83,6 @@ void AMagicCharacterPlayerController::InfiniteMap(AFloor* OverlappedFloor)
         Floors[2][0] = TempFloors[2][2];
         Floors[2][1] = TempFloors[2][0];
         Floors[2][2] = TempFloors[2][1];
-    }
-    else if (OverlappedFloor == Floors[1][1])
-    {
-        Floors[0][0] = TempFloors[0][0];
-        Floors[0][1] = TempFloors[0][1];
-        Floors[0][2] = TempFloors[0][2];
-        Floors[1][0] = TempFloors[1][0];
-        Floors[1][1] = TempFloors[1][1];
-        Floors[1][2] = TempFloors[1][2];
-        Floors[2][0] = TempFloors[2][0];
-        Floors[2][1] = TempFloors[2][1];
-        Floors[2][2] = TempFloors[2][2];
     }
     else if (OverlappedFloor == Floors[1][2])
     {

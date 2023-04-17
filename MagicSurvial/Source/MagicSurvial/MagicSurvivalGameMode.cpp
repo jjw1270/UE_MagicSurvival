@@ -5,6 +5,7 @@
 
 #include "Blueprint/UserWidget.h"
 #include "Animation/SkeletalMeshActor.h"
+#include "MagicCharacter.h"
 
 void AMagicSurvivalGameMode::BeginPlay()
 {
@@ -21,6 +22,13 @@ void AMagicSurvivalGameMode::BeginPlay()
     if (LobbyScreen != nullptr)
     {
         LobbyScreen->AddToViewport();
+    }
+
+    myCharacter = Cast<AMagicCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+    if (myCharacter == nullptr)
+    {
+        UE_LOG(LogTemp, Error, TEXT("AMagicCharacter"));
+        return;
     }
 }
 
@@ -40,5 +48,26 @@ void AMagicSurvivalGameMode::StartGame()
     }
     GetWorld()->GetFirstPlayerController()->bShowMouseCursor = false;
     bGameStart = true;
-    return;
+    
+    // 스킬 타이머 시작
+	GetWorld()->GetTimerManager().SetTimer(
+        TimerHandle_Skill_IceSpear,
+        myCharacter->TimerDelegate_Skill_IceSpear,
+        myCharacter->Get_Timer_Skill_IceSpear(), true);
+	GetWorld()->GetTimerManager().SetTimer(
+        TimerHandle_Skill_SparkleBall,
+        myCharacter->TimerDelegate_Skill_SparkleBall,
+        myCharacter->Get_Timer_Skill_SparkleBall(), true);
+	GetWorld()->GetTimerManager().SetTimer(
+        TimerHandle_Skill_LightningStrike,
+        myCharacter->TimerDelegate_Skill_LightningStrike,
+        myCharacter->Get_Timer_Skill_LightningStrike(), true);
+	GetWorld()->GetTimerManager().SetTimer(
+        TimerHandle_Skill_MagicArrow,
+        myCharacter->TimerDelegate_Skill_MagicArrow,
+        myCharacter->Get_Timer_Skill_MagicArrow(), true);
+	GetWorld()->GetTimerManager().SetTimer(
+        TimerHandle_Skill_PunchHeavy,
+        myCharacter->TimerDelegate_Skill_PunchHeavy,
+        myCharacter->Get_Timer_Skill_PunchHeavy(), true);
 }

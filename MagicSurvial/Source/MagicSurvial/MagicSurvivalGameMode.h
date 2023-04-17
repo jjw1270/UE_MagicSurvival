@@ -23,6 +23,8 @@ private:
 	UPROPERTY(EditAnywhere, Category = "LobbyUI")
 	TSubclassOf<ASkeletalMeshActor> LobbyCharacterClass;
 	UUserWidget* LobbyScreen;
+
+	class AMagicCharacter* myCharacter;
 	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
@@ -31,4 +33,11 @@ public:
 	ASkeletalMeshActor* SpawnedLobbyCharacter;
 
 	void StartGame();
+
+private:
+	FTimerHandle TimerHandle_Skill_IceSpear;
+	FTimerHandle TimerHandle_Skill_SparkleBall;
+	FTimerHandle TimerHandle_Skill_LightningStrike;
+	FTimerHandle TimerHandle_Skill_MagicArrow;
+	FTimerHandle TimerHandle_Skill_PunchHeavy;
 };

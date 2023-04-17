@@ -52,7 +52,7 @@ void AIceSpear::Tick(float DeltaTime)
 
 void AIceSpear::SetDamage()
 {
-    SkillDamage = FMath::RandRange(DefaultDamage-30, DefaultDamage);
+    SkillDamage = FMath::RandRange(DefaultDamage, DefaultDamage + 50);
 }
 
 void AIceSpear::OnOverlapBegin(

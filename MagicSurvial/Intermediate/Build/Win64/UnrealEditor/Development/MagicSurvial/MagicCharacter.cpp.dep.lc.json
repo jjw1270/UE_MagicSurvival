@@ -67,7 +67,9 @@
             "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\source\\magicsurvial\\icespear.h",
             "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\source\\magicsurvial\\skillbase.h",
             "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\skillbase.generated.h",
-            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\icespear.generated.h"
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\icespear.generated.h",
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\source\\magicsurvial\\sparkleball.h",
+            "f:\\unrealprojects\\ue_magicsurvival\\magicsurvial\\intermediate\\build\\win64\\unrealeditor\\inc\\magicsurvial\\uht\\sparkleball.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
