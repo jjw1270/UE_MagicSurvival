@@ -30,6 +30,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Component", meta = (AllowPrivateAccess = "true"))
 	class USphereComponent* SphereCollision;
+
+	UPROPERTY(EditAnywhere, Category = "Hit Effect", meta = (AllowPrivateAccess = "true"))
+	class UParticleSystem* HitParticle;
 	
 protected:
 	void SetDamage() override;
@@ -44,10 +47,4 @@ protected:
 		bool bFromSweep,
 		const FHitResult& SweepResult
 	);
-
-private:
-	FVector Direction;
-
-	FTimerHandle TimerHandle_DestroyActor;
-	FTimerHandle TimerHandle_DestroyParticle;
 };

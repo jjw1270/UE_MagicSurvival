@@ -5,6 +5,8 @@
 #include "Components/SphereComponent.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "Components/PrimitiveComponent.h"
+#include "Particles/ParticleSystem.h"
+#include "Kismet/GameplayStatics.h"
 
 ASparkleBall::ASparkleBall()
 {
@@ -18,10 +20,6 @@ ASparkleBall::ASparkleBall()
 
     SkillParticle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Skill Particle"));
 	SkillParticle->SetupAttachment(RootComponent);
-
-	HitParticle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Hit Particle"));
-	HitParticle->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
-	HitParticle->SetAutoActivate(false);
 }
 
 void ASparkleBall::BeginPlay()
@@ -32,19 +30,11 @@ void ASparkleBall::BeginPlay()
 	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &ASparkleBall::OnOverlapBegin);
 
     SetDamage();
-
-    Direction = GetActorForwardVector();
-
-    FTimerDelegate TimerDelegate = FTimerDelegate::CreateLambda([this]() {
-        this->Destroy();
-    });
-    GetWorldTimerManager().SetTimer(TimerHandle_DestroyActor, TimerDelegate, 10.f, false);
 }
 
 void ASparkleBall::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
-
     
 }
 
@@ -65,14 +55,9 @@ void ASparkleBall::OnOverlapBegin(
 	{
         SphereCollision->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		UE_LOG(LogTemp, Error, TEXT("Hit! : %s"), *OtherActor->GetName());
-		HitParticle->SetActive(true);
 
-        HitParticle->SetRelativeLocation(OtherActor->GetActorLocation());
+        // Hit Location에 파티클 생성
+        UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitParticle, OtherActor->GetActorTransform());
 
-        // 0.2초 후 파티클 비활성화
-		FTimerDelegate TimerDelegate = FTimerDelegate::CreateLambda([this]() {
-            HitParticle->SetActive(false);
-        });
-        GetWorldTimerManager().SetTimer(TimerHandle_DestroyParticle, TimerDelegate, 0.2f, false);
 	}
 }

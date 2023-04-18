@@ -22,9 +22,9 @@ AIceSpear::AIceSpear()
     SkillMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Skill Mesh"));
 	SkillMesh->SetupAttachment(RootComponent);
 
-	HitParticle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Hit Particle"));
-	HitParticle->SetupAttachment(RootComponent);
-	HitParticle->SetAutoActivate(false);
+	HitParticleComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Hit Particle"));
+	HitParticleComp->SetupAttachment(RootComponent);
+	HitParticleComp->SetAutoActivate(false);
 }
 
 void AIceSpear::BeginPlay()
@@ -67,7 +67,7 @@ void AIceSpear::OnOverlapBegin(
 	{
         SphereCollision->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		UE_LOG(LogTemp, Error, TEXT("Hit! : %s"), *OtherActor->GetName());
-		HitParticle->SetActive(true);
+		HitParticleComp->SetActive(true);
 		bIsHit = true;
 
         // 1초 후에 해당 액터를 제거

@@ -43,12 +43,6 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	TArray<TObjectPtr<USceneComponent>> Skill_Point_A;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<USceneComponent> Base_Skill_Point_B;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
-	TArray<TObjectPtr<USceneComponent>> Skill_Point_B;
-
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -77,7 +71,7 @@ private:
 	TSubclassOf<class AIceSpear> Skill_IceSpearClass;
 
 	UPROPERTY(EditAnywhere, Category = "Skills")
-	TSubclassOf<class ASparkleBall> Skill_SparkleBallClass;
+	TSubclassOf<class ASparkleBallBase> Skill_SparkleBallBaseClass;
 
 	UPROPERTY(EditAnywhere, Category = "Skills")
 	int Skill_Level_IceSpear = 0;
@@ -108,7 +102,7 @@ public:
 private:
 	// 스킬 간격
 	float Timer_Skill_IceSpear = 1.5f;
-	float Timer_Skill_SparkleBall = 5.f;
+	float Timer_Skill_SparkleBall = 18.f;
 	float Timer_Skill_LightningStrike = 3.f;
 	float Timer_Skill_MagicArrow = 2.f;
 	float Timer_Skill_PunchHeavy = 8.f;

@@ -70,9 +70,9 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillMesh;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_HitParticle_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HitParticleComp_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_HitParticle;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_HitParticleComp;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultDamage_MetaData[];
 #endif
@@ -104,14 +104,14 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillMesh = { "SkillMesh", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASkillBase, SkillMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillMesh_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticle_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticleComp_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Skill" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "SkillBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticle = { "HitParticle", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASkillBase, HitParticle), Z_Construct_UClass_UParticleSystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticle_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticleComp = { "HitParticleComp", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASkillBase, HitParticleComp), Z_Construct_UClass_UParticleSystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticleComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticleComp_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASkillBase_Statics::NewProp_DefaultDamage_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -122,7 +122,7 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASkillBase_Statics::NewProp_DefaultDamage = { "DefaultDamage", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASkillBase, DefaultDamage), METADATA_PARAMS(Z_Construct_UClass_ASkillBase_Statics::NewProp_DefaultDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASkillBase_Statics::NewProp_DefaultDamage_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASkillBase_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASkillBase_Statics::NewProp_SkillMesh,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticle,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASkillBase_Statics::NewProp_HitParticleComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASkillBase_Statics::NewProp_DefaultDamage,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASkillBase_Statics::StaticCppClassTypeInfo = {
@@ -162,9 +162,9 @@ void EmptyLinkFunctionForGeneratedCodeSkillBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SkillBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASkillBase, ASkillBase::StaticClass, TEXT("ASkillBase"), &Z_Registration_Info_UClass_ASkillBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASkillBase), 3124348405U) },
+		{ Z_Construct_UClass_ASkillBase, ASkillBase::StaticClass, TEXT("ASkillBase"), &Z_Registration_Info_UClass_ASkillBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASkillBase), 2494118755U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SkillBase_h_3827542361(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SkillBase_h_2830288053(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SkillBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SkillBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

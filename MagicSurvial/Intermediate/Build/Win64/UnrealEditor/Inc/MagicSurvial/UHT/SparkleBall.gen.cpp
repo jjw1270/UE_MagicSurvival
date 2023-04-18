@@ -11,6 +11,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSparkleBall() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystemComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
@@ -142,6 +143,10 @@ void EmptyLinkFunctionForGeneratedCodeSparkleBall() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SphereCollision_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_SphereCollision;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HitParticle_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_HitParticle;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -178,9 +183,18 @@ void EmptyLinkFunctionForGeneratedCodeSparkleBall() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASparkleBall_Statics::NewProp_SphereCollision = { "SphereCollision", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASparkleBall, SphereCollision), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASparkleBall_Statics::NewProp_SphereCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASparkleBall_Statics::NewProp_SphereCollision_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASparkleBall_Statics::NewProp_HitParticle_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Hit Effect" },
+		{ "ModuleRelativePath", "SparkleBall.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASparkleBall_Statics::NewProp_HitParticle = { "HitParticle", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ASparkleBall, HitParticle), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASparkleBall_Statics::NewProp_HitParticle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASparkleBall_Statics::NewProp_HitParticle_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASparkleBall_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASparkleBall_Statics::NewProp_SkillParticle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASparkleBall_Statics::NewProp_SphereCollision,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASparkleBall_Statics::NewProp_HitParticle,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASparkleBall_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASparkleBall>::IsAbstract,
@@ -219,9 +233,9 @@ void EmptyLinkFunctionForGeneratedCodeSparkleBall() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SparkleBall_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ASparkleBall, ASparkleBall::StaticClass, TEXT("ASparkleBall"), &Z_Registration_Info_UClass_ASparkleBall, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASparkleBall), 2565570537U) },
+		{ Z_Construct_UClass_ASparkleBall, ASparkleBall::StaticClass, TEXT("ASparkleBall"), &Z_Registration_Info_UClass_ASparkleBall, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASparkleBall), 2528812667U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SparkleBall_h_3916385917(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SparkleBall_h_580210806(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SparkleBall_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_SparkleBall_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

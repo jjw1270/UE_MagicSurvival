@@ -216,9 +216,9 @@ void EmptyLinkFunctionForGeneratedCodeIceSpear() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_IceSpear_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AIceSpear, AIceSpear::StaticClass, TEXT("AIceSpear"), &Z_Registration_Info_UClass_AIceSpear, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AIceSpear), 3685278447U) },
+		{ Z_Construct_UClass_AIceSpear, AIceSpear::StaticClass, TEXT("AIceSpear"), &Z_Registration_Info_UClass_AIceSpear, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AIceSpear), 2175231727U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_IceSpear_h_1613890836(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_IceSpear_h_1737571110(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_IceSpear_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_IceSpear_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

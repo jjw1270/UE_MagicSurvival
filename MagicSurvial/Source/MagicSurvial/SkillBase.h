@@ -18,7 +18,7 @@ protected:
 	class UStaticMeshComponent* SkillMesh;
 
 	UPROPERTY(EditAnywhere, Category = "Skill", meta = (AllowPrivateAccess = "true"))
-	class UParticleSystemComponent* HitParticle;
+	class UParticleSystemComponent* HitParticleComp;
 
 protected:
 	UPROPERTY(EditAnywhere, Category = "Skill", meta = (AllowPrivateAccess = "true"))
