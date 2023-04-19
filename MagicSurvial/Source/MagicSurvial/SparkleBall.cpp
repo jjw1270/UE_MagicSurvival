@@ -28,7 +28,7 @@ void ASparkleBall::BeginPlay()
 
     // Overlap Event 선언
 	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &ASparkleBall::OnOverlapBegin);
-
+    
     SetDamage();
 }
 
@@ -53,11 +53,9 @@ void ASparkleBall::OnOverlapBegin(
 {
 	if (OtherActor && (OtherActor != this) && OtherComp) 
 	{
-        SphereCollision->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		UE_LOG(LogTemp, Error, TEXT("Hit! : %s"), *OtherActor->GetName());
 
         // Hit Location에 파티클 생성
         UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), HitParticle, OtherActor->GetActorTransform());
-
 	}
 }

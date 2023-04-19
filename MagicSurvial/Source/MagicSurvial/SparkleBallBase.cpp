@@ -78,13 +78,13 @@ void ASparkleBallBase::Skill_SparkleBall()
 	case 5:
 		SparkleBallArray[3] = GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[3]->GetComponentLocation(), Skill_Point_B[3]->GetComponentRotation());
 		SparkleBallArray[3]->AttachToComponent(Skill_Point_B[3], FAttachmentTransformRules::KeepWorldTransform);
-		SparkleBallArray[5] = GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[5]->GetComponentLocation(), Skill_Point_B[5]->GetComponentRotation());
-		SparkleBallArray[5]->AttachToComponent(Skill_Point_B[5], FAttachmentTransformRules::KeepWorldTransform);
+		SparkleBallArray[7] = GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[7]->GetComponentLocation(), Skill_Point_B[7]->GetComponentRotation());
+		SparkleBallArray[7]->AttachToComponent(Skill_Point_B[7], FAttachmentTransformRules::KeepWorldTransform);
 	case 4:
 		SparkleBallArray[1] = GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[1]->GetComponentLocation(), Skill_Point_B[1]->GetComponentRotation());
 		SparkleBallArray[1]->AttachToComponent(Skill_Point_B[1], FAttachmentTransformRules::KeepWorldTransform);
-		SparkleBallArray[7] = GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[7]->GetComponentLocation(), Skill_Point_B[7]->GetComponentRotation());
-		SparkleBallArray[7]->AttachToComponent(Skill_Point_B[7], FAttachmentTransformRules::KeepWorldTransform);
+		SparkleBallArray[5] = GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[5]->GetComponentLocation(), Skill_Point_B[5]->GetComponentRotation());
+		SparkleBallArray[5]->AttachToComponent(Skill_Point_B[5], FAttachmentTransformRules::KeepWorldTransform);
 	case 3:
 		SparkleBallArray[2] = GetWorld()->SpawnActor<ASparkleBall>(Skill_SparkleBallClass, Skill_Point_B[2]->GetComponentLocation(), Skill_Point_B[2]->GetComponentRotation());
 		SparkleBallArray[2]->AttachToComponent(Skill_Point_B[2], FAttachmentTransformRules::KeepWorldTransform);

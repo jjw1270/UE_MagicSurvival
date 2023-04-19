@@ -47,4 +47,5 @@ protected:
 		bool bFromSweep,
 		const FHitResult& SweepResult
 	);
+
 };
