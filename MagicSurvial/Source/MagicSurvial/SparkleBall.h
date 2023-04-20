@@ -21,9 +21,6 @@ protected:
 	// Called when the game starts or when spawned
 	void BeginPlay() override;
 
-public:
-	void Tick(float DeltaTime) override;
-
 private:
 	UPROPERTY(EditAnywhere, Category = "Component", meta = (AllowPrivateAccess = "true"))
 	class UParticleSystemComponent* SkillParticle;

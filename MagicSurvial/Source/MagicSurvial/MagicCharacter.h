@@ -74,6 +74,9 @@ private:
 	TSubclassOf<class ASparkleBallBase> Skill_SparkleBallBaseClass;
 
 	UPROPERTY(EditAnywhere, Category = "Skills")
+	TSubclassOf<class ALightningStrike> Skill_LightningStrikeClass;
+
+	UPROPERTY(EditAnywhere, Category = "Skills")
 	int Skill_Level_IceSpear = 0;
 	UPROPERTY(EditAnywhere, Category = "Skills")
 	int Skill_Level_SparkleBall  = 0;

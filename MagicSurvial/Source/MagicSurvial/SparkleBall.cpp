@@ -32,15 +32,9 @@ void ASparkleBall::BeginPlay()
     SetDamage();
 }
 
-void ASparkleBall::Tick(float DeltaTime)
-{
-    Super::Tick(DeltaTime);
-    
-}
-
 void ASparkleBall::SetDamage()
 {
-    SkillDamage = FMath::RandRange(DefaultDamage-25, DefaultDamage+25);
+    SkillDamage = FMath::RandRange(FMath::TruncToInt(DefaultDamage * 0.75f), FMath::TruncToInt(DefaultDamage * 1.25f));
 }
 
 void ASparkleBall::OnOverlapBegin(

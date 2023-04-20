@@ -16,6 +16,7 @@
 
 #include "IceSpear.h"
 #include "SparkleBallBase.h"
+#include "LightningStrike.h"
 
 // Sets default values
 AMagicCharacter::AMagicCharacter()
@@ -60,7 +61,7 @@ void AMagicCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	GameMode = Cast<AMagicSurvivalGameMode>(GetWorld()->GetAuthGameMode());
-
+	
 	// Overlap Event 선언
 	RootCapsuleComp->OnComponentBeginOverlap.AddDynamic(this, &AMagicCharacter::OnOverlapBegin);
 
@@ -176,6 +177,8 @@ void AMagicCharacter::Skill_IceSpear()
 
 void AMagicCharacter::Skill_SparkleBall()
 {
+	if (GetSkill_Level_SparkleBall() == 0) return;
+
 	GetWorld()->SpawnActor<ASparkleBallBase>(Skill_SparkleBallBaseClass, GetActorLocation(), GetActorRotation());
 }
 
@@ -183,23 +186,15 @@ void AMagicCharacter::Skill_LightningStrike()
 {
 	if (GetSkill_Level_LightningStrike() == 0) return;
 
-	switch (GetSkill_Level_LightningStrike())
-	{
-	case 1:
-		
-		break;
-	case 2:
-
-		break;
-	case 3:
-
-		break;
-	case 4:
-
-		break;
-	case 5:
+	FVector2D ViewportSize;
+	GetWorld()->GetGameViewport()->GetViewportSize(ViewportSize);
 	
-		break;
+	for (int32 i = 0; i < GetSkill_Level_LightningStrike(); i++)
+	{
+		float randomX = (GetActorLocation().X + FMath::RandRange(-ViewportSize.Y, ViewportSize.Y)) * 0.7f;
+		float randomY = (GetActorLocation().Y + FMath::RandRange(-ViewportSize.X, ViewportSize.X)) * 0.7f;
+
+		GetWorld()->SpawnActor<ALightningStrike>(Skill_LightningStrikeClass, FVector(randomX, randomY, 100.f), FRotator::ZeroRotator);
 	}
 }
 

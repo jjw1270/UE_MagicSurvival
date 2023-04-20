@@ -71,8 +71,6 @@ void ASparkleBallBase::Tick(float DeltaTime)
 
 void ASparkleBallBase::Skill_SparkleBall()
 {
-	if (myCharacter->GetSkill_Level_SparkleBall() == 0) return;
-
 	switch (myCharacter->GetSkill_Level_SparkleBall())
 	{
 	case 5:
