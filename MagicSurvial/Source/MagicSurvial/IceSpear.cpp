@@ -12,7 +12,6 @@ AIceSpear::AIceSpear()
     PrimaryActorTick.bCanEverTick = true;
 
     SphereCollision = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere Collision"));
-
     RootComponent = SphereCollision;
 
     // SphereCollision->SetCollisionObjectType(ECollisionChannel::ECC_EngineTraceChannel1);

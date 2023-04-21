@@ -69,12 +69,12 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Skills")
 	TSubclassOf<class AIceSpear> Skill_IceSpearClass;
-
 	UPROPERTY(EditAnywhere, Category = "Skills")
 	TSubclassOf<class ASparkleBallBase> Skill_SparkleBallBaseClass;
-
 	UPROPERTY(EditAnywhere, Category = "Skills")
 	TSubclassOf<class ALightningStrike> Skill_LightningStrikeClass;
+	UPROPERTY(EditAnywhere, Category = "Skills")
+	TSubclassOf<class AMagicArrow> Skill_MagicArrowClass;
 
 	UPROPERTY(EditAnywhere, Category = "Skills")
 	int Skill_Level_IceSpear = 0;
@@ -107,8 +107,9 @@ private:
 	float Timer_Skill_IceSpear = 1.5f;
 	float Timer_Skill_SparkleBall = 18.f;
 	float Timer_Skill_LightningStrike = 3.f;
-	float Timer_Skill_MagicArrow = 2.f;
-	float Timer_Skill_PunchHeavy = 8.f;
+	float Timer_Skill_MagicArrow = 4.f;
+	FTimerHandle Skill_MagicArrow_Delay_TimerHandle;
+	float Timer_Skill_PunchHeavy = 2.f;
 
 public:
 	float Get_Timer_Skill_IceSpear() { return Timer_Skill_IceSpear; };

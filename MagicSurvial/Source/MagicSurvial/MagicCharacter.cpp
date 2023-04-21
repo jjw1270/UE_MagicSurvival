@@ -17,6 +17,7 @@
 #include "IceSpear.h"
 #include "SparkleBallBase.h"
 #include "LightningStrike.h"
+#include "MagicArrow.h"
 
 // Sets default values
 AMagicCharacter::AMagicCharacter()
@@ -202,24 +203,19 @@ void AMagicCharacter::Skill_MagicArrow()
 {
 	if (GetSkill_Level_MagicArrow() == 0) return;
 
-	switch (GetSkill_Level_MagicArrow())
-	{
-	case 1:
-		
-		break;
-	case 2:
+	int32 SkillCount = GetSkill_Level_MagicArrow();
 
-		break;
-	case 3:
-
-		break;
-	case 4:
-
-		break;
-	case 5:
-	
-		break;
-	}
+	// 0.3초 간격으로 spawn
+	FTimerDelegate TimerDelegate;
+	TimerDelegate.BindLambda([=]() mutable {
+		GetWorld()->SpawnActor<AMagicArrow>(Skill_MagicArrowClass, GetActorLocation(), GetActorRotation());
+		if (--SkillCount <= 0)
+		{
+			GetWorldTimerManager().ClearTimer(Skill_MagicArrow_Delay_TimerHandle);
+			return;
+		}
+	});
+	GetWorldTimerManager().SetTimer(Skill_MagicArrow_Delay_TimerHandle, TimerDelegate, 0.3f, true);
 }
 
 void AMagicCharacter::Skill_PunchHeavy()
