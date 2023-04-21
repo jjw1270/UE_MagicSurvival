@@ -18,6 +18,7 @@
 #include "SparkleBallBase.h"
 #include "LightningStrike.h"
 #include "MagicArrow.h"
+#include "PunchHeavy.h"
 
 // Sets default values
 AMagicCharacter::AMagicCharacter()
@@ -222,22 +223,6 @@ void AMagicCharacter::Skill_PunchHeavy()
 {
 	if (GetSkill_Level_PunchHeavy() == 0) return;
 
-	switch (GetSkill_Level_PunchHeavy())
-	{
-	case 1:
-		
-		break;
-	case 2:
-
-		break;
-	case 3:
-
-		break;
-	case 4:
-
-		break;
-	case 5:
-	
-		break;
-	}
+	APunchHeavy* PunchHeavy = GetWorld()->SpawnActor<APunchHeavy>(Skill_PunchHeavyClass, GetActorLocation(), GetActorRotation());
+	PunchHeavy->AttachToActor(this, FAttachmentTransformRules::KeepWorldTransform);
 }
