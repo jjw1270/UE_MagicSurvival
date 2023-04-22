@@ -136,13 +136,13 @@ void EmptyLinkFunctionForGeneratedCodePunchHeavy() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SkillParticle_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillParticle;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoxCollision_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BoxCollision;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SkillParticleComp_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SkillParticleComp;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_HitParticle_MetaData[];
 #endif
@@ -166,6 +166,15 @@ void EmptyLinkFunctionForGeneratedCodePunchHeavy() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticle_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Component" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "PunchHeavy.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticle = { "SkillParticle", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APunchHeavy, SkillParticle), Z_Construct_UClass_UParticleSystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticle_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APunchHeavy_Statics::NewProp_BoxCollision_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Component" },
@@ -175,15 +184,6 @@ void EmptyLinkFunctionForGeneratedCodePunchHeavy() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APunchHeavy_Statics::NewProp_BoxCollision = { "BoxCollision", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APunchHeavy, BoxCollision), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APunchHeavy_Statics::NewProp_BoxCollision_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APunchHeavy_Statics::NewProp_BoxCollision_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticleComp_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Component" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "PunchHeavy.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticleComp = { "SkillParticleComp", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APunchHeavy, SkillParticleComp), Z_Construct_UClass_UParticleSystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticleComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticleComp_MetaData)) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APunchHeavy_Statics::NewProp_HitParticle_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Hit Effect" },
@@ -192,8 +192,8 @@ void EmptyLinkFunctionForGeneratedCodePunchHeavy() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APunchHeavy_Statics::NewProp_HitParticle = { "HitParticle", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(APunchHeavy, HitParticle), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APunchHeavy_Statics::NewProp_HitParticle_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APunchHeavy_Statics::NewProp_HitParticle_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APunchHeavy_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APunchHeavy_Statics::NewProp_BoxCollision,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APunchHeavy_Statics::NewProp_SkillParticleComp,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APunchHeavy_Statics::NewProp_HitParticle,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APunchHeavy_Statics::StaticCppClassTypeInfo = {
@@ -233,9 +233,9 @@ void EmptyLinkFunctionForGeneratedCodePunchHeavy() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_PunchHeavy_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APunchHeavy, APunchHeavy::StaticClass, TEXT("APunchHeavy"), &Z_Registration_Info_UClass_APunchHeavy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APunchHeavy), 1007091176U) },
+		{ Z_Construct_UClass_APunchHeavy, APunchHeavy::StaticClass, TEXT("APunchHeavy"), &Z_Registration_Info_UClass_APunchHeavy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APunchHeavy), 2720532621U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_PunchHeavy_h_2451309438(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_PunchHeavy_h_2972329655(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_PunchHeavy_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_PunchHeavy_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

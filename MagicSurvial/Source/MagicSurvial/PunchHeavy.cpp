@@ -6,25 +6,28 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "Particles/ParticleSystem.h"
 #include "Kismet/GameplayStatics.h"
+#include "MagicCharacter.h"
 
 APunchHeavy::APunchHeavy()
 {
     PrimaryActorTick.bCanEverTick = true;
 
-    SkillParticleComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Skill Particle Component"));
-	RootComponent = SkillParticleComp;
+    SkillParticle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Skill Particle"));
+	RootComponent = SkillParticle;
 
     BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collision"));
-    BoxCollision->SetupAttachment(SkillParticleComp);
+    BoxCollision->SetupAttachment(RootComponent);
+
 }
 
 void APunchHeavy::BeginPlay()
 {
     Super::BeginPlay();
 
-    // 레벨에 따라 BoxCollision extend, 위치 조절
-
-    // 레벨에 따라 SkillParticleComp Scale 조절
+    // 레벨에 따라 SkillParticle Scale 조절
+    AMagicCharacter* myCharacter = Cast<AMagicCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+    FVector Scale = FVector(myCharacter->GetSkill_Level_PunchHeavy() * 0.6f, 1.f, 1.f);
+    SkillParticle->SetWorldScale3D(Scale);
 
     // Overlap Event 선언
 	BoxCollision->OnComponentBeginOverlap.AddDynamic(this, &APunchHeavy::OnOverlapBegin);

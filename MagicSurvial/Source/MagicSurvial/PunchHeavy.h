@@ -23,10 +23,10 @@ protected:
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Component", meta = (AllowPrivateAccess = "true"))
-	class UBoxComponent* BoxCollision;
+	class UParticleSystemComponent* SkillParticle;
 
 	UPROPERTY(EditAnywhere, Category = "Component", meta = (AllowPrivateAccess = "true"))
-	class UParticleSystemComponent* SkillParticleComp;
+	class UBoxComponent* BoxCollision;
 
 	UPROPERTY(EditAnywhere, Category = "Hit Effect", meta = (AllowPrivateAccess = "true"))
 	class UParticleSystem* HitParticle;
