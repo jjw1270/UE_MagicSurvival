@@ -24,14 +24,14 @@ AIceSpear::AIceSpear()
 	HitParticleComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Hit Particle"));
 	HitParticleComp->SetupAttachment(RootComponent);
 	HitParticleComp->SetAutoActivate(false);
+
+    // Overlap Event 선언
+	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &AIceSpear::OnOverlapBegin);
 }
 
 void AIceSpear::BeginPlay()
 {
     Super::BeginPlay();
-
-    // Overlap Event 선언
-	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &AIceSpear::OnOverlapBegin);
 
     SetDamage();
 

@@ -15,14 +15,14 @@ ALightningStrike::ALightningStrike()
 
     SkillParticle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Skill Particle"));
 	SkillParticle->SetupAttachment(RootComponent);
+
+    // Overlap Event 선언
+	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &ALightningStrike::OnOverlapBegin);
 }
 
 void ALightningStrike::BeginPlay()
 {
     Super::BeginPlay();
-
-    // Overlap Event 선언
-	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &ALightningStrike::OnOverlapBegin);
 
     SetDamage();
 

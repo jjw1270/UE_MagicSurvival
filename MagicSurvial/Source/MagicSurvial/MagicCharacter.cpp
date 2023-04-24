@@ -55,6 +55,9 @@ AMagicCharacter::AMagicCharacter()
 
 		Rotate_Yaw += 45.f;
 	}
+
+	// Overlap Event 선언
+	RootCapsuleComp->OnComponentBeginOverlap.AddDynamic(this, &AMagicCharacter::OnOverlapBegin);
 }
 
 // Called when the game starts or when spawned
@@ -63,9 +66,6 @@ void AMagicCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	GameMode = Cast<AMagicSurvivalGameMode>(GetWorld()->GetAuthGameMode());
-	
-	// Overlap Event 선언
-	RootCapsuleComp->OnComponentBeginOverlap.AddDynamic(this, &AMagicCharacter::OnOverlapBegin);
 
 	// Skill 타이머 델리게이트 생성
 	TimerDelegate_Skill_IceSpear = FTimerDelegate::CreateUObject(this, &AMagicCharacter::Skill_IceSpear);

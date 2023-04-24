@@ -40,4 +40,16 @@ private:
 	FTimerHandle TimerHandle_Skill_LightningStrike;
 	FTimerHandle TimerHandle_Skill_MagicArrow;
 	FTimerHandle TimerHandle_Skill_PunchHeavy;
+
+	FTimerHandle TimerHandle_GamePlay;
+	UFUNCTION()
+	void GameTimer();
+	UPROPERTY()
+	int32 GamePlayTime = 900; // 15분 (900 초)
+
+public:
+	int32 GetGamePlayTime()
+	{
+		return GamePlayTime;
+	}
 };

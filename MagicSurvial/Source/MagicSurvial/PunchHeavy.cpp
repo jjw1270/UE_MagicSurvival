@@ -18,6 +18,8 @@ APunchHeavy::APunchHeavy()
     BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("Box Collision"));
     BoxCollision->SetupAttachment(RootComponent);
 
+    // Overlap Event 선언
+	BoxCollision->OnComponentBeginOverlap.AddDynamic(this, &APunchHeavy::OnOverlapBegin);
 }
 
 void APunchHeavy::BeginPlay()
@@ -26,17 +28,14 @@ void APunchHeavy::BeginPlay()
 
     // 레벨에 따라 SkillParticle Scale 조절
     AMagicCharacter* myCharacter = Cast<AMagicCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-    FVector Scale = FVector(myCharacter->GetSkill_Level_PunchHeavy() * 0.6f, 1.f, 1.f);
+    FVector Scale = FVector(myCharacter->GetSkill_Level_PunchHeavy() * 0.5f, 0.8f, 0.8f);
     SkillParticle->SetWorldScale3D(Scale);
 
-    // Overlap Event 선언
-	BoxCollision->OnComponentBeginOverlap.AddDynamic(this, &APunchHeavy::OnOverlapBegin);
-
-    // 1초 후에 해당 액터를 제거
+    // 초 후에 해당 액터를 제거
     FTimerDelegate TimerDelegate = FTimerDelegate::CreateLambda([this]() {
         this->Destroy();
     });
-    GetWorldTimerManager().SetTimer(TimerHandle_DestroyActor, TimerDelegate, 1.f, false);
+    GetWorldTimerManager().SetTimer(TimerHandle_DestroyActor, TimerDelegate, 0.6f, false);
 }
 
 void APunchHeavy::SetDamage()
@@ -51,7 +50,7 @@ void APunchHeavy::OnOverlapBegin(UPrimitiveComponent* OverlappedComp,
         bool bFromSweep,
         const FHitResult& SweepResult)
 {
-    if (OtherActor && (OtherActor != this) && OtherComp) 
+    if (OtherActor && (OtherActor != this) && OtherComp)
 	{
 		UE_LOG(LogTemp, Error, TEXT("Hit! : %s"), *OtherActor->GetName());
 

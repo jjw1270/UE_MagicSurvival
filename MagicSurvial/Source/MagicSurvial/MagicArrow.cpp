@@ -25,16 +25,15 @@ AMagicArrow::AMagicArrow()
 	HitParticleComp->SetAutoActivate(false);
 
     EnemyCollisionType = ECC_GameTraceChannel2;
+
+    // Overlap Event 선언
+	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &AMagicArrow::OnOverlapBegin);
+	HitSphereCollision->OnComponentBeginOverlap.AddDynamic(this, &AMagicArrow::OnOverlapBegin);
 }
 
 void AMagicArrow::BeginPlay()
 {
     Super::BeginPlay();
-
-    // Overlap Event 선언
-	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &AMagicArrow::OnOverlapBegin);
-    // Overlap Event 선언
-	HitSphereCollision->OnComponentBeginOverlap.AddDynamic(this, &AMagicArrow::OnOverlapBegin);
 
     // 모든 적 찾기
     TArray<AActor*> AllEnemy;

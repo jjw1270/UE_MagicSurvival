@@ -111,7 +111,7 @@ private:
 	float Timer_Skill_LightningStrike = 3.f;
 	float Timer_Skill_MagicArrow = 4.f;
 	FTimerHandle Skill_MagicArrow_Delay_TimerHandle;
-	float Timer_Skill_PunchHeavy = 3.5f;
+	float Timer_Skill_PunchHeavy = 5.f;
 
 public:
 	float Get_Timer_Skill_IceSpear() { return Timer_Skill_IceSpear; };

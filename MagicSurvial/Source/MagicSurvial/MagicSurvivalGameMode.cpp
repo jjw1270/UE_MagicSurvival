@@ -48,6 +48,8 @@ void AMagicSurvivalGameMode::StartGame()
     }
     GetWorld()->GetFirstPlayerController()->bShowMouseCursor = false;
     bGameStart = true;
+
+    GetWorldTimerManager().SetTimer(TimerHandle_GamePlay, this, &AMagicSurvivalGameMode::GameTimer, 1.0f, true);
     
     // 스킬 타이머 시작
 	GetWorld()->GetTimerManager().SetTimer(
@@ -70,4 +72,14 @@ void AMagicSurvivalGameMode::StartGame()
         TimerHandle_Skill_PunchHeavy,
         myCharacter->TimerDelegate_Skill_PunchHeavy,
         myCharacter->Get_Timer_Skill_PunchHeavy(), true);
+}
+
+void AMagicSurvivalGameMode::GameTimer()
+{
+    if (GamePlayTime < 0)
+    {
+        // 게임 종료
+    }
+    GamePlayTime--;
+    UE_LOG(LogTemp, Display, TEXT("timer : %d"), GamePlayTime);
 }

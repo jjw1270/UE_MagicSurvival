@@ -20,14 +20,14 @@ ASparkleBall::ASparkleBall()
 
     SkillParticle = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Skill Particle"));
 	SkillParticle->SetupAttachment(RootComponent);
+
+	// Overlap Event 선언
+	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &ASparkleBall::OnOverlapBegin);
 }
 
 void ASparkleBall::BeginPlay()
 {
     Super::BeginPlay();
-
-    // Overlap Event 선언
-	SphereCollision->OnComponentBeginOverlap.AddDynamic(this, &ASparkleBall::OnOverlapBegin);
     
     SetDamage();
 }
