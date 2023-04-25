@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	MAGICSURVIAL_API UClass* Z_Construct_UClass_AEnemyCharacterBase_NoRegister();
 	MAGICSURVIAL_API UClass* Z_Construct_UClass_AEnemyObjectPooler();
@@ -139,7 +140,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ZombieClass_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_ZombieClass;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_ZombieClass;
 		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Pool_Zombie_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Pool_Zombie_MetaData[];
@@ -170,7 +171,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass = { "ZombieClass", nullptr, (EPropertyFlags)0x0044000000020015, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, ZombieClass), Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass = { "ZombieClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, ZombieClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData)) };
 	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie_Inner = { "Pool_Zombie", nullptr, (EPropertyFlags)0x0004000000020000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie_MetaData[] = {
@@ -222,9 +223,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyObjectPooler, AEnemyObjectPooler::StaticClass, TEXT("AEnemyObjectPooler"), &Z_Registration_Info_UClass_AEnemyObjectPooler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyObjectPooler), 256435411U) },
+		{ Z_Construct_UClass_AEnemyObjectPooler, AEnemyObjectPooler::StaticClass, TEXT("AEnemyObjectPooler"), &Z_Registration_Info_UClass_AEnemyObjectPooler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyObjectPooler), 1890822541U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_3192700007(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_481708155(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

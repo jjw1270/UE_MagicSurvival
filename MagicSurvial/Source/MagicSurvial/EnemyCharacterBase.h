@@ -15,10 +15,6 @@ public:
 	// Sets default values for this character's properties
 	AEnemyCharacterBase();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -37,6 +33,10 @@ private:
 
 	UPROPERTY()
 	class AMagicCharacter* TargetPlayer;
+
+	bool bActived;
+
+	bool bDeath;
 
 private:
     UFUNCTION()
@@ -59,4 +59,16 @@ private:
 		UPrimitiveComponent *OtherComp,
 		int32 OtherBodyIndex
 	);
+
+public:
+	void SetActive(bool bActive);
+
+	bool IsActive()
+	{
+		return bActived;
+	}
 };
+
+
+// GetDamage()
+// OnDeath()

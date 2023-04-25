@@ -18,8 +18,8 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "EnemyClass", meta = (AllowPrivateAccess = "true"))
-	TObjectPtr<AEnemyCharacterBase> ZombieClass;
+	UPROPERTY(EditAnywhere, Category = "EnemyClass", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<AEnemyCharacterBase> ZombieClass;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Object Pool", meta = (AllowPrivateAccess = "true"))
 	TArray<TObjectPtr<AEnemyCharacterBase>> Pool_Zombie;

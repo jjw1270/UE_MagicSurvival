@@ -26,14 +26,6 @@ AEnemyCharacterBase::AEnemyCharacterBase()
 	GetMesh()->SetCollisionProfileName("NoCollision");
 }
 
-// Called when the game starts or when spawned
-void AEnemyCharacterBase::BeginPlay()
-{
-	Super::BeginPlay();
-
-	TargetPlayer = Cast<AMagicCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-}
-
 // Called every frame
 void AEnemyCharacterBase::Tick(float DeltaTime)
 {
@@ -99,4 +91,21 @@ void AEnemyCharacterBase::OnOverlapEnd(UPrimitiveComponent* OverlappedComp,
 	{
         // Clear TimerHandle
 	}
+}
+
+void AEnemyCharacterBase::SetActive(bool bActive)
+{
+	// 활성화 작업
+	if (bActive)
+	{
+		SetActorHiddenInGame(false);
+		TargetPlayer = Cast<AMagicCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+		bActived = true;
+		bDeath = false;
+		return;
+	}
+
+	// 비활성화 작업
+	SetActorHiddenInGame(true);
+	bActived = false;
 }
