@@ -14,10 +14,6 @@ AIceSpear::AIceSpear()
     SphereCollision = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere Collision"));
     RootComponent = SphereCollision;
 
-    // SphereCollision->SetCollisionObjectType(ECollisionChannel::ECC_EngineTraceChannel1);
-    // SphereCollision->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
-    // SphereCollision->SetCollisionResponseToChannel(ECollisionChannel::ECC_EngineTraceChannel2, ECollisionResponse::ECR_Overlap);
-
     SkillMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Skill Mesh"));
 	SkillMesh->SetupAttachment(RootComponent);
 

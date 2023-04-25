@@ -17,6 +17,13 @@ AEnemyCharacterBase::AEnemyCharacterBase()
 	// Overlap Event 선언
 	RootCapsuleComp->OnComponentBeginOverlap.AddDynamic(this, &AEnemyCharacterBase::OnOverlapBegin);
 	RootCapsuleComp->OnComponentEndOverlap.AddDynamic(this, &AEnemyCharacterBase::OnOverlapEnd);
+
+	Tags.Add("Enemy");
+
+	RootCapsuleComp->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel2);
+	RootCapsuleComp->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Block);
+	RootCapsuleComp->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel1, ECollisionResponse::ECR_Overlap);
+	GetMesh()->SetCollisionProfileName("NoCollision");
 }
 
 // Called when the game starts or when spawned
