@@ -213,7 +213,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyCharacterBase_SetHP_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyCharacterBase, nullptr, "SetHP", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemyCharacterBase_SetHP_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyCharacterBase_SetHP_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyCharacterBase_SetHP_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyCharacterBase, nullptr, "SetHP", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemyCharacterBase_SetHP_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyCharacterBase_SetHP_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AEnemyCharacterBase_SetHP()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -258,7 +258,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemyCharacterBase_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AEnemyCharacterBase_OnOverlapBegin, "OnOverlapBegin" }, // 4235732173
 		{ &Z_Construct_UFunction_AEnemyCharacterBase_OnOverlapEnd, "OnOverlapEnd" }, // 1796836553
-		{ &Z_Construct_UFunction_AEnemyCharacterBase_SetHP, "SetHP" }, // 3057433787
+		{ &Z_Construct_UFunction_AEnemyCharacterBase_SetHP, "SetHP" }, // 582935206
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyCharacterBase_Statics::Class_MetaDataParams[] = {
@@ -274,7 +274,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP = { "DefaultHP", nullptr, (EPropertyFlags)0x0040000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, DefaultHP), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData)) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP = { "DefaultHP", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, DefaultHP), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -282,13 +282,13 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage = { "AttackDamage", nullptr, (EPropertyFlags)0x0040000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, AttackDamage), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData)) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage = { "AttackDamage", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, AttackDamage), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer_MetaData[] = {
 		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer = { "TargetPlayer", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, TargetPlayer), Z_Construct_UClass_AMagicCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer = { "TargetPlayer", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, TargetPlayer), Z_Construct_UClass_AMagicCharacter_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyCharacterBase_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage,
@@ -331,9 +331,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyCharacterBase, AEnemyCharacterBase::StaticClass, TEXT("AEnemyCharacterBase"), &Z_Registration_Info_UClass_AEnemyCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacterBase), 794199211U) },
+		{ Z_Construct_UClass_AEnemyCharacterBase, AEnemyCharacterBase::StaticClass, TEXT("AEnemyCharacterBase"), &Z_Registration_Info_UClass_AEnemyCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacterBase), 3484463704U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_3989142142(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_2503477666(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

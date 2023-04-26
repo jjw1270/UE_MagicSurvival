@@ -18,7 +18,6 @@ void ULobbyWidget::NativeOnInitialized()
 
 void ULobbyWidget::Btn_GameStart_Callback()
 {
-    UE_LOG(LogTemp, Warning, TEXT("GameStart Button Pressed!"));
     // 캐릭터 애니메이션 / 게임 시작 sound 실행
     currentGameMode = Cast<AMagicSurvivalGameMode>(GetWorld()->GetAuthGameMode());
     if (currentGameMode)
@@ -32,8 +31,6 @@ void ULobbyWidget::Btn_GameStart_Callback()
 
 void ULobbyWidget::Btn_QuitGame_Callback()
 {
-    UE_LOG(LogTemp, Warning, TEXT("QuitGame!"));
-
     GetWorld()->GetFirstPlayerController()->ConsoleCommand("quit");
 }
 

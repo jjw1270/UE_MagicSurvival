@@ -32,7 +32,7 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\EnemyCharacter_Default.cpp",
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\EnemyCharacter_Fast.cpp",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
 			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_Default\\MagicSurvial.255.rsp"
@@ -40,7 +40,7 @@
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\EnemyCharacter_Default.h",
+		"file": "F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\Source\\MagicSurvial\\EnemyCharacter_Fast.h",
 		"arguments": [
 			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe",
 			"@F:\\UnrealProjects\\UE_MagicSurvival\\MagicSurvial\\.vscode\\compileCommands_Default\\MagicSurvial.255.rsp"

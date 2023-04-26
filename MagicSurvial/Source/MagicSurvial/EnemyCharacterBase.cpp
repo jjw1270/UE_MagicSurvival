@@ -9,9 +9,6 @@
 // Sets default values
 AEnemyCharacterBase::AEnemyCharacterBase()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
 	RootCapsuleComp = GetCapsuleComponent();
 
 	// Overlap Event 선언
@@ -19,11 +16,23 @@ AEnemyCharacterBase::AEnemyCharacterBase()
 	RootCapsuleComp->OnComponentEndOverlap.AddDynamic(this, &AEnemyCharacterBase::OnOverlapEnd);
 
 	Tags.Add("Enemy");
+	Tags.Add("");
 
 	RootCapsuleComp->SetCollisionObjectType(ECollisionChannel::ECC_GameTraceChannel2);
 	RootCapsuleComp->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Block);
 	RootCapsuleComp->SetCollisionResponseToChannel(ECollisionChannel::ECC_GameTraceChannel1, ECollisionResponse::ECR_Overlap);
 	GetMesh()->SetCollisionProfileName("NoCollision");
+}
+
+void AEnemyCharacterBase::BeginPlay()
+{
+	Super::BeginPlay();
+	
+	if (Tags[1].GetStringLength() < 1)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Should Add Tags : %s"), *GetName());
+		return;
+	}
 }
 
 // Called every frame
@@ -95,17 +104,23 @@ void AEnemyCharacterBase::OnOverlapEnd(UPrimitiveComponent* OverlappedComp,
 
 void AEnemyCharacterBase::SetActive(bool bActive)
 {
-	// 활성화 작업
+	// 활성화
 	if (bActive)
 	{
-		SetActorHiddenInGame(false);
+		GetMesh()->SetVisibility(true);
+		PrimaryActorTick.bCanEverTick = true;
 		TargetPlayer = Cast<AMagicCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+		SetHP();
+		// 맵상의 카메라 밖 영역의 랜덤한 위치에 스폰
+		
 		bActived = true;
 		bDeath = false;
 		return;
 	}
 
-	// 비활성화 작업
-	SetActorHiddenInGame(true);
+	// 비활성화
+	GetMesh()->SetVisibility(false);
+	PrimaryActorTick.bCanEverTick = false;
+	SetActorLocation(FVector(0, 0, -1000.f));
 	bActived = false;
 }

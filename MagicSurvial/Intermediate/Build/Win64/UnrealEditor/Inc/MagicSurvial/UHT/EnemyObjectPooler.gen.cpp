@@ -141,11 +141,30 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ZombieClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_ZombieClass;
-		static const UECodeGen_Private::FObjectPtrPropertyParams NewProp_Pool_Zombie_Inner;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Pool_Zombie_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_GhoulClass_MetaData[];
 #endif
-		static const UECodeGen_Private::FArrayPropertyParams NewProp_Pool_Zombie;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_GhoulClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SkeletonClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_SkeletonClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LichClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_LichClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_GoblinClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_GoblinClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Default_EnemyObjectNum_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Default_EnemyObjectNum;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Fast_EnemyObjectNum_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_Fast_EnemyObjectNum;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -167,24 +186,69 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "EnemyClass" },
+		{ "Category", "Enemy" },
 		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass = { "ZombieClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, ZombieClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData)) };
-	const UECodeGen_Private::FObjectPtrPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie_Inner = { "Pool_Zombie", nullptr, (EPropertyFlags)0x0004000000020000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GhoulClass_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Object Pool" },
+		{ "Category", "Enemy" },
 		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
 	};
 #endif
-	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie = { "Pool_Zombie", nullptr, (EPropertyFlags)0x0044000000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, Pool_Zombie), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GhoulClass = { "GhoulClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, GhoulClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GhoulClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GhoulClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_SkeletonClass_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_SkeletonClass = { "SkeletonClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, SkeletonClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_SkeletonClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_SkeletonClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_LichClass_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_LichClass = { "LichClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, LichClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_LichClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_LichClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GoblinClass_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GoblinClass = { "GoblinClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, GoblinClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GoblinClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GoblinClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Default_EnemyObjectNum_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
+		{ "ToolTip", "\xea\xb0\x81\xea\xb0\x81\xec\x9d\x98 \xec\xa0\x81 \xec\x98\xa4\xeb\xb8\x8c\xec\xa0\x9d\xed\x8a\xb8\xec\x9d\x98 \xec\x8a\xa4\xed\x8f\xb0\xed\x95\xa0 \xeb\xa7\x88\xeb\xa6\xac \xec\x88\x98" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Default_EnemyObjectNum = { "Default_EnemyObjectNum", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, Default_EnemyObjectNum), METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Default_EnemyObjectNum_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Default_EnemyObjectNum_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
+		{ "ToolTip", "\xea\xb0\x81\xea\xb0\x81\xec\x9d\x98 \xec\xa0\x81 \xec\x98\xa4\xeb\xb8\x8c\xec\xa0\x9d\xed\x8a\xb8\xec\x9d\x98 \xec\x8a\xa4\xed\x8f\xb0\xed\x95\xa0 \xeb\xa7\x88\xeb\xa6\xac \xec\x88\x98" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum = { "Fast_EnemyObjectNum", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, Fast_EnemyObjectNum), METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyObjectPooler_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie_Inner,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Pool_Zombie,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GhoulClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_SkeletonClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_LichClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GoblinClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Default_EnemyObjectNum,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AEnemyObjectPooler_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AEnemyObjectPooler>::IsAbstract,
@@ -223,9 +287,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyObjectPooler, AEnemyObjectPooler::StaticClass, TEXT("AEnemyObjectPooler"), &Z_Registration_Info_UClass_AEnemyObjectPooler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyObjectPooler), 1890822541U) },
+		{ Z_Construct_UClass_AEnemyObjectPooler, AEnemyObjectPooler::StaticClass, TEXT("AEnemyObjectPooler"), &Z_Registration_Info_UClass_AEnemyObjectPooler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyObjectPooler), 1264918176U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_481708155(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_1840141648(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -15,14 +15,18 @@ public:
 	// Sets default values for this character's properties
 	AEnemyCharacterBase();
 
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	void Tick(float DeltaTime) override;
 
 private:
 	UCapsuleComponent* RootCapsuleComp;
 
-private:
+protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Defaults", meta = (AllowPrivateAccess = "true"))
 	int32 DefaultHP;
 
@@ -38,10 +42,11 @@ private:
 
 	bool bDeath;
 
-private:
+protected:
     UFUNCTION()
     void SetHP();
 
+private:
 	UFUNCTION()
 	void OnOverlapBegin(
 		UPrimitiveComponent *OverlappedComp,
@@ -61,7 +66,7 @@ private:
 	);
 
 public:
-	void SetActive(bool bActive);
+	virtual void SetActive(bool bActive);
 
 	bool IsActive()
 	{
