@@ -16,7 +16,7 @@ void AEnemyCharacter_Fast::Tick(float DeltaTime)
 	}
 }
 
-void AEnemyCharacter_Fast::SetActive(bool bActive)
+void AEnemyCharacter_Fast::SetActive(bool bActive, FVector Location)
 {
     // 활성화
 	if (bActive)
@@ -26,7 +26,9 @@ void AEnemyCharacter_Fast::SetActive(bool bActive)
 		TargetDirection = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation().GetSafeNormal();
 		SetHP();
 		// 맵상의 카메라 밖 영역의 랜덤한 위치에 스폰
-		
+		// 같은 위치에 여러 오브젝트를 한꺼번에 스폰해야 함으로 따로 제어
+		SetActorLocation(Location, true);
+
         SetActorRotation(TargetDirection.Rotation());
 		bActived = true;
 		bDeath = false;

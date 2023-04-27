@@ -10,6 +10,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 // Cross Module References
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -19,6 +20,13 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 	MAGICSURVIAL_API UClass* Z_Construct_UClass_AMagicCharacter_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_MagicSurvial();
 // End Cross Module References
+	DEFINE_FUNCTION(AEnemyCharacterBase::execGetRandomLocationtoSpawn)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FVector*)Z_Param__Result=P_THIS->GetRandomLocationtoSpawn();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AEnemyCharacterBase::execOnOverlapEnd)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OverlappedComp);
@@ -54,11 +62,44 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 	{
 		UClass* Class = AEnemyCharacterBase::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetRandomLocationtoSpawn", &AEnemyCharacterBase::execGetRandomLocationtoSpawn },
 			{ "OnOverlapBegin", &AEnemyCharacterBase::execOnOverlapBegin },
 			{ "OnOverlapEnd", &AEnemyCharacterBase::execOnOverlapEnd },
 			{ "SetHP", &AEnemyCharacterBase::execSetHP },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics
+	{
+		struct EnemyCharacterBase_eventGetRandomLocationtoSpawn_Parms
+		{
+			FVector ReturnValue;
+		};
+		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(EnemyCharacterBase_eventGetRandomLocationtoSpawn_Parms, ReturnValue), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyCharacterBase, nullptr, "GetRandomLocationtoSpawn", nullptr, nullptr, sizeof(Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::EnemyCharacterBase_eventGetRandomLocationtoSpawn_Parms), Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AEnemyCharacterBase_OnOverlapBegin_Statics
 	{
@@ -256,6 +297,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_MagicSurvial,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemyCharacterBase_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AEnemyCharacterBase_GetRandomLocationtoSpawn, "GetRandomLocationtoSpawn" }, // 2997455583
 		{ &Z_Construct_UFunction_AEnemyCharacterBase_OnOverlapBegin, "OnOverlapBegin" }, // 4235732173
 		{ &Z_Construct_UFunction_AEnemyCharacterBase_OnOverlapEnd, "OnOverlapEnd" }, // 1796836553
 		{ &Z_Construct_UFunction_AEnemyCharacterBase_SetHP, "SetHP" }, // 582935206
@@ -274,7 +316,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP = { "DefaultHP", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, DefaultHP), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData)) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP = { "DefaultHP", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, DefaultHP), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_DefaultHP_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -282,7 +324,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
 	};
 #endif
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage = { "AttackDamage", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, AttackDamage), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData)) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage = { "AttackDamage", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyCharacterBase, AttackDamage), METADATA_PARAMS(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_AttackDamage_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyCharacterBase_Statics::NewProp_TargetPlayer_MetaData[] = {
 		{ "ModuleRelativePath", "EnemyCharacterBase.h" },
@@ -331,9 +373,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacterBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyCharacterBase, AEnemyCharacterBase::StaticClass, TEXT("AEnemyCharacterBase"), &Z_Registration_Info_UClass_AEnemyCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacterBase), 3484463704U) },
+		{ Z_Construct_UClass_AEnemyCharacterBase, AEnemyCharacterBase::StaticClass, TEXT("AEnemyCharacterBase"), &Z_Registration_Info_UClass_AEnemyCharacterBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacterBase), 3326226531U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_2503477666(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_363011014(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

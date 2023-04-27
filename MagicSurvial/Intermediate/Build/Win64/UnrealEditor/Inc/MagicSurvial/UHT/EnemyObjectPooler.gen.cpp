@@ -138,6 +138,10 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_EnemyBaseClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_EnemyBaseClass;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ZombieClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_ZombieClass;
@@ -183,6 +187,14 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_EnemyBaseClass_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Enemy" },
+		{ "ModuleRelativePath", "EnemyObjectPooler.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_EnemyBaseClass = { "EnemyBaseClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, EnemyBaseClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEnemyCharacterBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_EnemyBaseClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_EnemyBaseClass_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -242,6 +254,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum = { "Fast_EnemyObjectNum", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AEnemyObjectPooler, Fast_EnemyObjectNum), METADATA_PARAMS(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_Fast_EnemyObjectNum_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AEnemyObjectPooler_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_EnemyBaseClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_ZombieClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_GhoulClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AEnemyObjectPooler_Statics::NewProp_SkeletonClass,
@@ -287,9 +300,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyObjectPooler() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyObjectPooler, AEnemyObjectPooler::StaticClass, TEXT("AEnemyObjectPooler"), &Z_Registration_Info_UClass_AEnemyObjectPooler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyObjectPooler), 1264918176U) },
+		{ Z_Construct_UClass_AEnemyObjectPooler, AEnemyObjectPooler::StaticClass, TEXT("AEnemyObjectPooler"), &Z_Registration_Info_UClass_AEnemyObjectPooler, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyObjectPooler), 1061382281U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_1840141648(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_3950079533(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyObjectPooler_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

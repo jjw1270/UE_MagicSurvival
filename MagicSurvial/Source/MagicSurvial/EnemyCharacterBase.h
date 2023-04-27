@@ -26,13 +26,15 @@ public:
 private:
 	UCapsuleComponent* RootCapsuleComp;
 
+	FTimerHandle DamageTimerHandle;
+
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Defaults", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, Category = "Defaults", meta = (AllowPrivateAccess = "true"))
 	int32 DefaultHP;
 
 	int32 HP;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Defaults", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, Category = "Defaults", meta = (AllowPrivateAccess = "true"))
 	int32 AttackDamage;
 
 	UPROPERTY()
@@ -66,12 +68,15 @@ private:
 	);
 
 public:
-	virtual void SetActive(bool bActive);
+	void SetActive(bool bActive);
 
 	bool IsActive()
 	{
 		return bActived;
 	}
+
+	UFUNCTION()
+	FVector GetRandomLocationtoSpawn();
 };
 
 

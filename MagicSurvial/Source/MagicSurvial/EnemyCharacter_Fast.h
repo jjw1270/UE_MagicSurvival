@@ -18,7 +18,7 @@ public:
 	// Called every frame
 	void Tick(float DeltaTime) override;
 
-	void SetActive(bool bActive) override;
+	void SetActive(bool bActive, FVector Location);
 
 private:
 	FVector TargetDirection;

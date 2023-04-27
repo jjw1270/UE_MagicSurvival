@@ -34,6 +34,8 @@ public:
 
 	void StartGame();
 
+	void EndGame();
+
 private:
 	FTimerHandle TimerHandle_Skill_IceSpear;
 	FTimerHandle TimerHandle_Skill_SparkleBall;
@@ -46,6 +48,24 @@ private:
 	void GameTimer();
 	UPROPERTY()
 	int32 GamePlayTime = 900; // 15분 (900 초)
+
+	class AEnemyObjectPooler* EnemyObjectPooler;
+
+	bool bStartTimer;
+
+	UFUNCTION()
+	void EnemySpawnController();
+
+	FTimerHandle TimerHandle_Enemy_Zombie;
+	FTimerHandle TimerHandle_Enemy_Ghoul;
+	FTimerHandle TimerHandle_Enemy_Skeleton;
+	FTimerHandle TimerHandle_Enemy_Lich;
+	FTimerHandle TimerHandle_Enemy_Goblin;
+
+	FTimerDelegate TimerDelegate_SpawnEnemy;
+
+	UFUNCTION()
+	void SpawnEnemy(FName EnemyTag, int32 EnemyCount);
 
 public:
 	int32 GetGamePlayTime()

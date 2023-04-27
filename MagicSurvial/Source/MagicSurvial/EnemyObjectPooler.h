@@ -19,6 +19,10 @@ protected:
 
 private:
 	UPROPERTY(EditAnywhere, Category = "Enemy", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<AEnemyCharacterBase> EnemyBaseClass;
+
+private:
+	UPROPERTY(EditAnywhere, Category = "Enemy", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AEnemyCharacterBase> ZombieClass;
 	UPROPERTY(EditAnywhere, Category = "Enemy", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AEnemyCharacterBase> GhoulClass;

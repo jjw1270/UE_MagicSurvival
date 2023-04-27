@@ -17,6 +17,22 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvivalGameMode() {}
 	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_MagicSurvial();
 // End Cross Module References
+	DEFINE_FUNCTION(AMagicSurvivalGameMode::execSpawnEnemy)
+	{
+		P_GET_PROPERTY(FNameProperty,Z_Param_EnemyTag);
+		P_GET_PROPERTY(FIntProperty,Z_Param_EnemyCount);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SpawnEnemy(Z_Param_EnemyTag,Z_Param_EnemyCount);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AMagicSurvivalGameMode::execEnemySpawnController)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->EnemySpawnController();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMagicSurvivalGameMode::execGameTimer)
 	{
 		P_FINISH;
@@ -28,9 +44,33 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvivalGameMode() {}
 	{
 		UClass* Class = AMagicSurvivalGameMode::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "EnemySpawnController", &AMagicSurvivalGameMode::execEnemySpawnController },
 			{ "GameTimer", &AMagicSurvivalGameMode::execGameTimer },
+			{ "SpawnEnemy", &AMagicSurvivalGameMode::execSpawnEnemy },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicSurvivalGameMode.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicSurvivalGameMode, nullptr, "EnemySpawnController", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AMagicSurvivalGameMode_GameTimer_Statics
 	{
@@ -51,6 +91,42 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvivalGameMode() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicSurvivalGameMode_GameTimer_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics
+	{
+		struct MagicSurvivalGameMode_eventSpawnEnemy_Parms
+		{
+			FName EnemyTag;
+			int32 EnemyCount;
+		};
+		static const UECodeGen_Private::FNamePropertyParams NewProp_EnemyTag;
+		static const UECodeGen_Private::FIntPropertyParams NewProp_EnemyCount;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::NewProp_EnemyTag = { "EnemyTag", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MagicSurvivalGameMode_eventSpawnEnemy_Parms, EnemyTag), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::NewProp_EnemyCount = { "EnemyCount", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(MagicSurvivalGameMode_eventSpawnEnemy_Parms, EnemyCount), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::NewProp_EnemyTag,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::NewProp_EnemyCount,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MagicSurvivalGameMode.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMagicSurvivalGameMode, nullptr, "SpawnEnemy", nullptr, nullptr, sizeof(Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::MagicSurvivalGameMode_eventSpawnEnemy_Parms), Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -92,7 +168,9 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvivalGameMode() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_MagicSurvial,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMagicSurvivalGameMode_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMagicSurvivalGameMode_EnemySpawnController, "EnemySpawnController" }, // 306617884
 		{ &Z_Construct_UFunction_AMagicSurvivalGameMode_GameTimer, "GameTimer" }, // 3213391587
+		{ &Z_Construct_UFunction_AMagicSurvivalGameMode_SpawnEnemy, "SpawnEnemy" }, // 1226867433
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMagicSurvivalGameMode_Statics::Class_MetaDataParams[] = {
@@ -176,9 +254,9 @@ void EmptyLinkFunctionForGeneratedCodeMagicSurvivalGameMode() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMagicSurvivalGameMode, AMagicSurvivalGameMode::StaticClass, TEXT("AMagicSurvivalGameMode"), &Z_Registration_Info_UClass_AMagicSurvivalGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicSurvivalGameMode), 935839354U) },
+		{ Z_Construct_UClass_AMagicSurvivalGameMode, AMagicSurvivalGameMode::StaticClass, TEXT("AMagicSurvivalGameMode"), &Z_Registration_Info_UClass_AMagicSurvivalGameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMagicSurvivalGameMode), 1444989631U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_1881195263(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_327536482(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

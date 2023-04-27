@@ -80,9 +80,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter_Fast() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacter_Fast_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyCharacter_Fast, AEnemyCharacter_Fast::StaticClass, TEXT("AEnemyCharacter_Fast"), &Z_Registration_Info_UClass_AEnemyCharacter_Fast, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacter_Fast), 2118358092U) },
+		{ Z_Construct_UClass_AEnemyCharacter_Fast, AEnemyCharacter_Fast::StaticClass, TEXT("AEnemyCharacter_Fast"), &Z_Registration_Info_UClass_AEnemyCharacter_Fast, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacter_Fast), 3301958471U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacter_Fast_h_1766129519(TEXT("/Script/MagicSurvial"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacter_Fast_h_2916361556(TEXT("/Script/MagicSurvial"),
 		Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacter_Fast_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_MagicSurvial_Source_MagicSurvial_EnemyCharacter_Fast_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

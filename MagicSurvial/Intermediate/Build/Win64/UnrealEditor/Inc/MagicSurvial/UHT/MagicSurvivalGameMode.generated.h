@@ -17,11 +17,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_14_SPARSE_DATA
 #define FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_14_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSpawnEnemy); \
+	DECLARE_FUNCTION(execEnemySpawnController); \
 	DECLARE_FUNCTION(execGameTimer);
 
 
 #define FID_MagicSurvial_Source_MagicSurvial_MagicSurvivalGameMode_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSpawnEnemy); \
+	DECLARE_FUNCTION(execEnemySpawnController); \
 	DECLARE_FUNCTION(execGameTimer);
 
 

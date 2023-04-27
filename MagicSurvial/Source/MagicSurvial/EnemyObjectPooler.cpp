@@ -3,7 +3,7 @@
 
 #include "EnemyObjectPooler.h"
 #include "EnemyCharacterBase.h"
-
+#include "EnemyCharacter_Fast.h"
 
 // Called when the game starts or when spawned
 void AEnemyObjectPooler::BeginPlay()
@@ -78,6 +78,7 @@ void AEnemyObjectPooler::AddObjectToPool(const FName& EnemyTag)
 void AEnemyObjectPooler::SpawnObjectFromPool(const FName& EnemyTag)
 {
 	TArray<AEnemyCharacterBase*>* EnemyPool = nullptr;
+	FVector RandPosforFastEnemy = FVector::ZeroVector;
 
 	// 해당 클래스 배열에서 비활성화 된 오브젝트 찾기
 	if (EnemyTag == TEXT("Zombie"))
@@ -99,6 +100,7 @@ void AEnemyObjectPooler::SpawnObjectFromPool(const FName& EnemyTag)
 	else if (EnemyTag == TEXT("Goblin"))
 	{
 		EnemyPool = &Pool_Goblin;
+		RandPosforFastEnemy = EnemyBaseClass->GetDefaultObject<AEnemyCharacterBase>()->GetRandomLocationtoSpawn();
 	}
 	// 적 추가 하세요
 
@@ -112,6 +114,11 @@ void AEnemyObjectPooler::SpawnObjectFromPool(const FName& EnemyTag)
 		AEnemyCharacterBase* enemy = (*EnemyPool)[i];
 		if (!enemy->IsActive())
 		{
+			if (RandPosforFastEnemy != FVector::ZeroVector)
+			{
+				Cast<AEnemyCharacter_Fast>(enemy)->SetActive(true, RandPosforFastEnemy);
+				return;
+			}
 			enemy->SetActive(true);
 			return;
 		}

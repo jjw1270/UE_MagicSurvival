@@ -20,6 +20,7 @@ struct FHitResult;
 #define FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_12_SPARSE_DATA
 #define FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_12_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetRandomLocationtoSpawn); \
 	DECLARE_FUNCTION(execOnOverlapEnd); \
 	DECLARE_FUNCTION(execOnOverlapBegin); \
 	DECLARE_FUNCTION(execSetHP);
@@ -27,6 +28,7 @@ struct FHitResult;
 
 #define FID_MagicSurvial_Source_MagicSurvial_EnemyCharacterBase_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetRandomLocationtoSpawn); \
 	DECLARE_FUNCTION(execOnOverlapEnd); \
 	DECLARE_FUNCTION(execOnOverlapBegin); \
 	DECLARE_FUNCTION(execSetHP);
